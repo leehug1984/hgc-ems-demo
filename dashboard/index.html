@@ -69,8 +69,8 @@
 
     <main class="content">
       <div class="page-grid">
-        <div class="page-grid" style="grid-template-columns: 2.6fr 1fr; align-items: start;">
-        <div class="page-grid">
+        <div class="page-grid" style="grid-template-columns: 2.6fr 1fr;">
+        <div class="page-grid" style="display:flex;flex-direction:column;gap:var(--space-lg)">
         <div class="kpi-row" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
           <div class="kpi">
             <div class="icon blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div>
@@ -122,10 +122,10 @@
           <div class="mini-stat warn"><div class="icon" style="background:var(--color-critical-wash);color:var(--color-critical)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></div><div><div class="label">Cảnh báo đang hoạt động</div><div class="value">8</div></div></div>
         </div>
 
-        <div class="page-grid" style="grid-template-columns: 1fr 1.4fr;">
-          <section class="card">
+        <div class="page-grid" style="grid-template-columns: 1fr 1.4fr;flex:1;align-items:stretch">
+          <section class="card" style="display:flex;flex-direction:column;height:100%">
             <div class="card-head"><h2>Sơ đồ dòng năng lượng</h2></div>
-            <div class="card-body">
+            <div class="card-body" style="flex:1;display:flex;flex-direction:column;justify-content:center">
               <div class="diagram-frame chart-frame" style="background:none">
                 <svg viewBox="0 0 460 270">
                   <!-- flow lines — orthogonal; direction now carried by the traveling light dot only -->
@@ -199,7 +199,7 @@
             </div>
           </section>
 
-          <section class="card">
+          <section class="card" style="display:flex;flex-direction:column;height:100%">
             <div class="card-head">
               <h2>Xu hướng công suất</h2>
               <div class="card-head-spacer"></div>
@@ -209,7 +209,7 @@
                 <span class="item"><span class="swatch line" style="background:var(--chart-4)"></span>Tải (MW)</span>
               </div>
             </div>
-            <div class="card-body">
+            <div class="card-body" style="flex:1;display:flex;flex-direction:column;justify-content:center">
               <div class="chart-frame" data-hover>
                 <svg viewBox="0 0 600 220" preserveAspectRatio="none">
                   <line class="grid-line" x1="40" y1="20" x2="580" y2="20"/>

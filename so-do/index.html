@@ -77,7 +77,7 @@
         </div>
         <div class="card-body">
           <div class="diagram-frame chart-frame" style="position:relative;padding:var(--space-md)">
-            <svg viewBox="0 0 900 460">
+            <svg viewBox="0 0 900 600">
               <text x="450" y="18" text-anchor="middle" class="node-sub" style="font-size:11px">110kV Grid</text>
               <circle cx="450" cy="40" r="13" class="node-box"/>
               <g transform="translate(450,40)" style="color:var(--color-accent-2)">
@@ -154,29 +154,133 @@
                 <text class="node-sub" x="757" y="299" style="fill:var(--color-good)">Đóng</text>
               </g>
 
-              <!-- Battery system — 2 racks, values synced with Giám sát -->
-              <line class="wire" x1="370" y1="310" x2="370" y2="360"/>
-              <line class="wire" x1="560" y1="310" x2="560" y2="360"/>
-              <text x="465" y="352" text-anchor="middle" class="node-sub" style="font-size:10px;fill:var(--color-ink-2)">Battery System · 5.02 MWh · SOC 68%</text>
+              <!-- Battery System — PCS1/PCS2 merge into a DC combiner bus, then fan out into 3 containers, each holding its own rack count (synced with Tài sản) -->
+              <line class="wire" x1="370" y1="310" x2="370" y2="330"/>
+              <line class="wire" x1="560" y1="310" x2="560" y2="330"/>
+              <line class="bus" x1="370" y1="330" x2="560" y2="330"/>
+              <text x="465" y="320" text-anchor="middle" class="node-sub" style="font-size:9px">DC Combiner</text>
+              <line class="wire" x1="465" y1="330" x2="465" y2="345"/>
 
-              <g class="dnode"><rect class="node-box" x="307" y="360" width="125" height="60" rx="8" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                <circle class="status-on" cx="322" cy="374" r="4"/>
-                <g transform="translate(333,390)" style="color:var(--color-accent)">
-                  <rect x="-5" y="-9" width="10" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                  <rect x="-2.4" y="-12" width="4.8" height="3" fill="currentColor" stroke="none"/>
+              <g class="dnode"><rect class="node-box" x="390" y="345" width="150" height="62" rx="8" style="fill:var(--color-accent-wash);stroke:var(--color-accent);stroke-width:1.5"/>
+                <circle class="status-on" cx="405" cy="359" r="4"/>
+                <g transform="translate(465,362)" style="color:var(--color-accent)">
+                  <rect x="-7" y="-12" width="14" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="1.4"/>
+                  <rect x="-3.5" y="-16" width="7" height="4" fill="currentColor" stroke="none"/>
+                  <line x1="-7" y1="-2" x2="7" y2="-2" stroke="currentColor" stroke-width="1"/>
+                  <line x1="-7" y1="4" x2="7" y2="4" stroke="currentColor" stroke-width="1"/>
                 </g>
-                <text class="node-label" x="349" y="379" style="font-weight:600">Rack 01</text>
-                <text class="node-sub" x="349" y="395">-312 kW · 25.2°C</text>
+                <text class="node-label" x="465" y="384" text-anchor="middle" style="font-weight:600">Battery System</text>
+                <text class="node-sub" x="465" y="398" text-anchor="middle">5.02 MWh · SOC 68%</text>
               </g>
 
-              <g class="dnode"><rect class="node-box" x="497" y="360" width="125" height="60" rx="8" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                <circle class="status-on" cx="512" cy="374" r="4"/>
-                <g transform="translate(523,390)" style="color:var(--color-accent)">
-                  <rect x="-5" y="-9" width="10" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                  <rect x="-2.4" y="-12" width="4.8" height="3" fill="currentColor" stroke="none"/>
+              <line class="wire" x1="465" y1="407" x2="465" y2="427"/>
+              <line class="bus" x1="150" y1="427" x2="760" y2="427"/>
+              <line class="wire" x1="150" y1="427" x2="150" y2="447"/>
+              <line class="wire" x1="465" y1="427" x2="465" y2="447"/>
+              <line class="wire" x1="760" y1="427" x2="760" y2="447"/>
+
+              <!-- Container 01 — 4 racks (Rack 04 in cảnh báo, matching Tài sản) -->
+              <g class="dnode"><rect class="node-box" x="75" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                <circle class="status-on" cx="90" cy="459" r="4"/>
+                <g transform="translate(150,467)" style="color:var(--color-accent-2)">
+                  <rect x="-11" y="-8" width="22" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <path d="M-5.5 -8v16M0 -8v16M5.5 -8v16" stroke="currentColor" stroke-width="1"/>
                 </g>
-                <text class="node-label" x="539" y="379" style="font-weight:600">Rack 02</text>
-                <text class="node-sub" x="539" y="395">-298 kW · 25.0°C</text>
+                <text class="node-label" x="150" y="481" text-anchor="middle" style="font-weight:600">Container 01</text>
+                <text class="node-sub" x="150" y="495" text-anchor="middle">4 racks · -590 kW</text>
+              </g>
+
+              <!-- Container 02 — 2 racks -->
+              <g class="dnode"><rect class="node-box" x="390" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                <circle class="status-on" cx="405" cy="459" r="4"/>
+                <g transform="translate(465,467)" style="color:var(--color-accent-2)">
+                  <rect x="-11" y="-8" width="22" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <path d="M-5.5 -8v16M0 -8v16M5.5 -8v16" stroke="currentColor" stroke-width="1"/>
+                </g>
+                <text class="node-label" x="465" y="481" text-anchor="middle" style="font-weight:600">Container 02</text>
+                <text class="node-sub" x="465" y="495" text-anchor="middle">2 racks · -302 kW</text>
+              </g>
+
+              <!-- Container 03 — 2 racks -->
+              <g class="dnode"><rect class="node-box" x="685" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                <circle class="status-on" cx="700" cy="459" r="4"/>
+                <g transform="translate(760,467)" style="color:var(--color-accent-2)">
+                  <rect x="-11" y="-8" width="22" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <path d="M-5.5 -8v16M0 -8v16M5.5 -8v16" stroke="currentColor" stroke-width="1"/>
+                </g>
+                <text class="node-label" x="760" y="481" text-anchor="middle" style="font-weight:600">Container 03</text>
+                <text class="node-sub" x="760" y="495" text-anchor="middle">2 racks · -297 kW</text>
+              </g>
+
+              <!-- Container 01 rack fan-out (4 racks) -->
+              <line class="wire" x1="150" y1="505" x2="150" y2="520"/>
+              <line class="bus" x1="42" y1="520" x2="258" y2="520"/>
+              <line class="wire" x1="42" y1="520" x2="42" y2="540"/>
+              <line class="wire" x1="114" y1="520" x2="114" y2="540"/>
+              <line class="wire" x1="186" y1="520" x2="186" y2="540"/>
+              <line class="wire" x1="258" y1="520" x2="258" y2="540"/>
+
+              <g class="dnode"><rect class="node-box" x="11" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="21" cy="549" r="3"/>
+                <g transform="translate(42,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="42" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
+                <text class="node-sub" x="42" y="582" text-anchor="middle" style="font-size:8px">-152 kW</text>
+              </g>
+              <g class="dnode"><rect class="node-box" x="83" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="93" cy="549" r="3"/>
+                <g transform="translate(114,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="114" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
+                <text class="node-sub" x="114" y="582" text-anchor="middle" style="font-size:8px">-148 kW</text>
+              </g>
+              <g class="dnode"><rect class="node-box" x="155" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="165" cy="549" r="3"/>
+                <g transform="translate(186,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="186" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R03</text>
+                <text class="node-sub" x="186" y="582" text-anchor="middle" style="font-size:8px">-151 kW</text>
+              </g>
+              <g class="dnode"><rect class="node-box" x="227" y="540" width="62" height="48" rx="6" style="fill:var(--color-warning-wash);stroke:var(--color-warning)"/>
+                <circle class="status-alarm" cx="237" cy="549" r="3"/>
+                <g transform="translate(258,552)" style="color:var(--color-warning)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="258" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R04</text>
+                <text class="node-sub" x="258" y="582" text-anchor="middle" style="font-size:8px;fill:var(--color-warning)">Cảnh báo</text>
+              </g>
+
+              <!-- Container 02 rack fan-out (2 racks) -->
+              <line class="wire" x1="465" y1="505" x2="465" y2="520"/>
+              <line class="bus" x1="429" y1="520" x2="501" y2="520"/>
+              <line class="wire" x1="429" y1="520" x2="429" y2="540"/>
+              <line class="wire" x1="501" y1="520" x2="501" y2="540"/>
+
+              <g class="dnode"><rect class="node-box" x="398" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="408" cy="549" r="3"/>
+                <g transform="translate(429,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="429" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
+                <text class="node-sub" x="429" y="582" text-anchor="middle" style="font-size:8px">-149 kW</text>
+              </g>
+              <g class="dnode"><rect class="node-box" x="470" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="480" cy="549" r="3"/>
+                <g transform="translate(501,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="501" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
+                <text class="node-sub" x="501" y="582" text-anchor="middle" style="font-size:8px">-153 kW</text>
+              </g>
+
+              <!-- Container 03 rack fan-out (2 racks) -->
+              <line class="wire" x1="760" y1="505" x2="760" y2="520"/>
+              <line class="bus" x1="724" y1="520" x2="796" y2="520"/>
+              <line class="wire" x1="724" y1="520" x2="724" y2="540"/>
+              <line class="wire" x1="796" y1="520" x2="796" y2="540"/>
+
+              <g class="dnode"><rect class="node-box" x="693" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="703" cy="549" r="3"/>
+                <g transform="translate(724,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="724" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
+                <text class="node-sub" x="724" y="582" text-anchor="middle" style="font-size:8px">-150 kW</text>
+              </g>
+              <g class="dnode"><rect class="node-box" x="765" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                <circle class="status-on" cx="775" cy="549" r="3"/>
+                <g transform="translate(796,552)" style="color:var(--color-accent)"><rect x="-4" y="-7" width="8" height="14" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.1"/><rect x="-2" y="-9" width="4" height="2.5" fill="currentColor" stroke="none"/></g>
+                <text class="node-label" x="796" y="570" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
+                <text class="node-sub" x="796" y="582" text-anchor="middle" style="font-size:8px">-147 kW</text>
               </g>
             </svg>
 
