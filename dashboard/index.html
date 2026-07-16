@@ -127,72 +127,72 @@
             <div class="card-head"><h2>Sơ đồ dòng năng lượng</h2></div>
             <div class="card-body" style="flex:1;display:flex;flex-direction:column;justify-content:center">
               <div class="diagram-frame chart-frame" style="background:none">
-                <svg viewBox="0 0 460 270">
-                  <!-- flow lines — orthogonal; direction now carried by the traveling light dot only -->
-                  <path class="wire" d="M102 58 L200 58 L200 120" style="stroke:var(--color-good)"/>
-                  <path class="wire" d="M200 120 L200 182 L102 182" style="stroke:var(--color-good)"/>
-                  <path class="wire" d="M358 58 L260 58 L260 120" style="stroke:var(--chart-5)"/>
-                  <path class="wire" d="M260 120 L260 182 L358 182" style="stroke:var(--chart-5)"/>
+                <svg viewBox="0 0 460 432">
+                  <!-- flow lines — orthogonal; direction now carried by the traveling light dot only. Canvas scaled 1.6x tall for a bigger diagram -->
+                  <path class="wire" d="M118 93 L200 93 L200 192" style="stroke:var(--color-good)"/>
+                  <path class="wire" d="M200 192 L200 291 L118 291" style="stroke:var(--color-good)"/>
+                  <path class="wire" d="M342 93 L260 93 L260 192" style="stroke:var(--chart-5)"/>
+                  <path class="wire" d="M260 192 L260 291 L342 291" style="stroke:var(--chart-5)"/>
 
                   <!-- traveling light per connector — speed scaled to each flow's magnitude (1.25/1.20/0.65/2.85 MW) -->
-                  <circle class="flow-dot green" r="3.5" style="offset-path:path('M102 58 L200 58 L200 120');animation-duration:2.4s"/>
-                  <circle class="flow-dot green" r="3.5" style="offset-path:path('M200 120 L200 182 L102 182');animation-duration:2.5s"/>
-                  <circle class="flow-dot orange" r="3.5" style="offset-path:path('M358 58 L260 58 L260 120');animation-duration:4s"/>
-                  <circle class="flow-dot orange" r="3.5" style="offset-path:path('M260 120 L260 182 L358 182');animation-duration:1.6s"/>
+                  <circle class="flow-dot green" r="5.5" style="offset-path:path('M118 93 L200 93 L200 192');animation-duration:3.8s"/>
+                  <circle class="flow-dot green" r="5.5" style="offset-path:path('M200 192 L200 291 L118 291');animation-duration:4s"/>
+                  <circle class="flow-dot orange" r="5.5" style="offset-path:path('M342 93 L260 93 L260 192');animation-duration:6.4s"/>
+                  <circle class="flow-dot orange" r="5.5" style="offset-path:path('M260 192 L260 291 L342 291');animation-duration:2.6s"/>
 
                   <!-- AC bus -->
-                  <line x1="200" y1="120" x2="260" y2="120" style="stroke:var(--color-accent);stroke-width:3"/>
-                  <text class="node-sub" x="230" y="105" text-anchor="middle">AC BUS</text>
-                  <text class="node-label" x="230" y="145" text-anchor="middle" style="font-weight:600">2.45 MW</text>
-                  <circle cx="230" cy="157" r="3" style="fill:var(--color-good)"/>
+                  <line x1="200" y1="192" x2="260" y2="192" style="stroke:var(--color-accent);stroke-width:5"/>
+                  <text class="node-sub" x="230" y="177" text-anchor="middle" style="font-size:11px">AC BUS</text>
+                  <text class="node-label" x="230" y="217" text-anchor="middle" style="font-weight:600;font-size:13px">2.45 MW</text>
+                  <circle cx="230" cy="229" r="5" style="fill:var(--color-good)"/>
 
                   <!-- PV — generates into the bus -->
                   <g class="dnode">
-                    <circle cx="75" cy="58" r="27" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:2"/>
-                    <g transform="translate(75,58)" style="color:var(--color-good)">
+                    <circle cx="75" cy="93" r="43" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:3"/>
+                    <g transform="translate(75,93) scale(1.6)" style="color:var(--color-good)">
                       <circle r="7" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <path d="M0 -15v3M0 12v3M-15 0h3M12 0h3M-10.6 -10.6l2.1 2.1M8.5 8.5l2.1 2.1M-10.6 10.6l2.1-2.1M8.5 -8.5l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
                     </g>
-                    <circle class="status-on" cx="97" cy="37" r="3.5"/>
-                    <text class="node-label" x="75" y="18" text-anchor="middle" style="font-weight:600">PV</text>
-                    <text class="node-sub" x="75" y="105" text-anchor="middle">1.25 MW</text>
+                    <circle class="status-on" cx="110" cy="59" r="5.5"/>
+                    <text class="node-label" x="75" y="29" text-anchor="middle" style="font-weight:600;font-size:13px">PV</text>
+                    <text class="node-sub" x="75" y="168" text-anchor="middle" style="font-size:11px">1.25 MW</text>
                   </g>
 
                   <!-- BESS — charging, draws from the bus -->
                   <g class="dnode">
-                    <circle cx="75" cy="182" r="27" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:2"/>
-                    <g transform="translate(75,182)" style="color:var(--color-good)">
+                    <circle cx="75" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:3"/>
+                    <g transform="translate(75,291) scale(1.6)" style="color:var(--color-good)">
                       <rect x="-6" y="-14" width="12" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <rect x="-3" y="-18" width="6" height="4" fill="currentColor" stroke="none"/>
                     </g>
-                    <circle class="status-on" cx="97" cy="161" r="3.5"/>
-                    <text class="node-label" x="75" y="142" text-anchor="middle" style="font-weight:600">BESS</text>
-                    <text class="node-sub" x="75" y="227" text-anchor="middle">-1.20 MW</text>
-                    <text class="node-sub" x="75" y="243" text-anchor="middle" style="fill:var(--color-good)">68%</text>
+                    <circle class="status-on" cx="110" cy="257" r="5.5"/>
+                    <text class="node-label" x="75" y="227" text-anchor="middle" style="font-weight:600;font-size:13px">BESS</text>
+                    <text class="node-sub" x="75" y="363" text-anchor="middle" style="font-size:11px">-1.20 MW</text>
+                    <text class="node-sub" x="75" y="389" text-anchor="middle" style="fill:var(--color-good);font-size:11px">68%</text>
                   </g>
 
                   <!-- Lưới điện / Grid — importing into the bus -->
                   <g class="dnode">
-                    <circle cx="385" cy="58" r="27" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:2"/>
-                    <g transform="translate(385,58)" style="color:var(--chart-5)">
+                    <circle cx="385" cy="93" r="43" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:3"/>
+                    <g transform="translate(385,93) scale(1.6)" style="color:var(--chart-5)">
                       <path d="M0 -16 -9 16 M0 -16 9 16 M-5.5 -4 H5.5 M-7 3 H7 M-8.5 10 H8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
                     </g>
-                    <circle class="status-on" cx="407" cy="37" r="3.5"/>
-                    <text class="node-label" x="385" y="18" text-anchor="middle" style="font-weight:600">Lưới điện</text>
-                    <text class="node-sub" x="385" y="105" text-anchor="middle">0.65 MW</text>
-                    <text class="node-sub" x="385" y="121" text-anchor="middle" style="fill:var(--color-good)">Nhập</text>
+                    <circle class="status-on" cx="420" cy="59" r="5.5"/>
+                    <text class="node-label" x="385" y="29" text-anchor="middle" style="font-weight:600;font-size:13px">Lưới điện</text>
+                    <text class="node-sub" x="385" y="168" text-anchor="middle" style="font-size:11px">0.65 MW</text>
+                    <text class="node-sub" x="385" y="194" text-anchor="middle" style="fill:var(--color-good);font-size:11px">Nhập</text>
                   </g>
 
                   <!-- Tải / Load — consuming from the bus -->
                   <g class="dnode">
-                    <circle cx="385" cy="182" r="27" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:2"/>
-                    <g transform="translate(385,182)" style="color:var(--chart-5)">
+                    <circle cx="385" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:3"/>
+                    <g transform="translate(385,291) scale(1.6)" style="color:var(--chart-5)">
                       <path d="M-9 14V-3l9-7 9 7v17" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <path d="M-4 14V6h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/>
                     </g>
-                    <circle class="status-on" cx="407" cy="161" r="3.5"/>
-                    <text class="node-label" x="385" y="142" text-anchor="middle" style="font-weight:600">Tải</text>
-                    <text class="node-sub" x="385" y="227" text-anchor="middle">2.85 MW</text>
+                    <circle class="status-on" cx="420" cy="257" r="5.5"/>
+                    <text class="node-label" x="385" y="227" text-anchor="middle" style="font-weight:600;font-size:13px">Tải</text>
+                    <text class="node-sub" x="385" y="366" text-anchor="middle" style="font-size:11px">2.85 MW</text>
                   </g>
                 </svg>
               </div>
@@ -211,36 +211,36 @@
             </div>
             <div class="card-body" style="flex:1;display:flex;flex-direction:column;justify-content:center">
               <div class="chart-frame" data-hover>
-                <svg viewBox="0 0 600 220" preserveAspectRatio="none">
-                  <line class="grid-line" x1="40" y1="20" x2="580" y2="20"/>
-                  <line class="grid-line" x1="40" y1="70" x2="580" y2="70"/>
-                  <line class="grid-line" x1="40" y1="120" x2="580" y2="120"/>
-                  <line class="grid-line" x1="40" y1="170" x2="580" y2="170"/>
-                  <line class="baseline" x1="40" y1="190" x2="580" y2="190"/>
-                  <text class="axis-label" x="4" y="24">3.0</text>
-                  <text class="axis-label" x="4" y="74">2.0</text>
-                  <text class="axis-label" x="4" y="124">1.0</text>
-                  <text class="axis-label" x="4" y="174">0</text>
+                <svg viewBox="0 0 600 352" preserveAspectRatio="none">
+                  <line class="grid-line" x1="40" y1="32" x2="580" y2="32"/>
+                  <line class="grid-line" x1="40" y1="112" x2="580" y2="112"/>
+                  <line class="grid-line" x1="40" y1="192" x2="580" y2="192"/>
+                  <line class="grid-line" x1="40" y1="272" x2="580" y2="272"/>
+                  <line class="baseline" x1="40" y1="304" x2="580" y2="304"/>
+                  <text class="axis-label" x="4" y="36" style="font-size:11px">3.0</text>
+                  <text class="axis-label" x="4" y="116" style="font-size:11px">2.0</text>
+                  <text class="axis-label" x="4" y="196" style="font-size:11px">1.0</text>
+                  <text class="axis-label" x="4" y="276" style="font-size:11px">0</text>
 
-                  <polyline class="series-line" stroke="var(--chart-1)" points="40,120 130,110 220,95 310,80 400,75 490,90 580,100"/>
-                  <polyline class="series-line" stroke="var(--chart-3)" points="40,185 130,160 220,110 310,72 400,68 490,105 580,182"/>
-                  <polyline class="series-line" stroke="var(--chart-4)" points="40,105 130,100 220,88 310,60 400,55 490,70 580,85"/>
+                  <polyline class="series-line" stroke="var(--chart-1)" points="40,192 130,176 220,152 310,128 400,120 490,144 580,160" style="stroke-width:2.5"/>
+                  <polyline class="series-line" stroke="var(--chart-3)" points="40,296 130,256 220,176 310,115 400,109 490,168 580,291" style="stroke-width:2.5"/>
+                  <polyline class="series-line" stroke="var(--chart-4)" points="40,168 130,160 220,141 310,96 400,88 490,112 580,136" style="stroke-width:2.5"/>
 
-                  <line class="chart-crosshair" x1="40" y1="10" x2="40" y2="190"/>
+                  <line class="chart-crosshair" x1="40" y1="16" x2="40" y2="304"/>
                   <g>
-                    <circle class="chart-point" cx="40" cy="120" r="4" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"Công suất tải","value":"1.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.0 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="130" cy="110" r="4" stroke="var(--chart-1)" data-label="04:00" data-rows='[{"name":"Công suất tải","value":"1.8 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.4 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.1 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="220" cy="95" r="4" stroke="var(--chart-1)" data-label="08:00" data-rows='[{"name":"Công suất tải","value":"2.1 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.4 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="310" cy="80" r="4" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"Công suất tải","value":"2.4 MW","color":"var(--chart-1)"},{"name":"PV","value":"2.8 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.9 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="400" cy="75" r="4" stroke="var(--chart-1)" data-label="16:00" data-rows='[{"name":"Công suất tải","value":"2.45 MW","color":"var(--chart-1)"},{"name":"PV","value":"2.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.85 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="490" cy="90" r="4" stroke="var(--chart-1)" data-label="20:00" data-rows='[{"name":"Công suất tải","value":"2.2 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.6 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="580" cy="100" r="4" stroke="var(--chart-1)" data-label="24:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.3 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="40" cy="192" r="5.5" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"Công suất tải","value":"1.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.0 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="130" cy="176" r="5.5" stroke="var(--chart-1)" data-label="04:00" data-rows='[{"name":"Công suất tải","value":"1.8 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.4 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.1 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="220" cy="152" r="5.5" stroke="var(--chart-1)" data-label="08:00" data-rows='[{"name":"Công suất tải","value":"2.1 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.4 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="310" cy="128" r="5.5" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"Công suất tải","value":"2.4 MW","color":"var(--chart-1)"},{"name":"PV","value":"2.8 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.9 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="400" cy="120" r="5.5" stroke="var(--chart-1)" data-label="16:00" data-rows='[{"name":"Công suất tải","value":"2.45 MW","color":"var(--chart-1)"},{"name":"PV","value":"2.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.85 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="490" cy="144" r="5.5" stroke="var(--chart-1)" data-label="20:00" data-rows='[{"name":"Công suất tải","value":"2.2 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.6 MW","color":"var(--chart-4)"}]'/>
+                    <circle class="chart-point" cx="580" cy="160" r="5.5" stroke="var(--chart-1)" data-label="24:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.3 MW","color":"var(--chart-4)"}]'/>
                   </g>
-                  <text class="axis-label" x="30" y="208">00:00</text>
-                  <text class="axis-label" x="215" y="208">08:00</text>
-                  <text class="axis-label" x="390" y="208">16:00</text>
-                  <text class="axis-label" x="562" y="208">24:00</text>
-                  <rect class="chart-hover-target" x="40" y="10" width="540" height="180" fill="transparent"/>
+                  <text class="axis-label" x="30" y="333" style="font-size:11px">00:00</text>
+                  <text class="axis-label" x="215" y="333" style="font-size:11px">08:00</text>
+                  <text class="axis-label" x="390" y="333" style="font-size:11px">16:00</text>
+                  <text class="axis-label" x="562" y="333" style="font-size:11px">24:00</text>
+                  <rect class="chart-hover-target" x="40" y="16" width="540" height="288" fill="transparent"/>
                 </svg>
                 <div class="chart-tooltip"></div>
               </div>
