@@ -666,6 +666,20 @@ table.data-table {
 .dropdown-menu svg { width: 15px; height: 15px; opacity: 0.75; }
 .dropdown-divider { height: 1px; background: var(--color-rule-2); margin: var(--space-2xs) 0; }
 
+.dropdown-menu .menu-eyebrow {
+  padding: 8px 10px 4px;
+  font-size: var(--text-3xs);
+  color: var(--color-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.menu-dot { width: 7px; height: 7px; border-radius: 50%; flex: none; }
+.menu-dot.good { background: var(--color-good); }
+.menu-dot.warning { background: var(--color-warning); }
+.menu-dot.critical { background: var(--color-critical); }
+.dropdown-menu a.is-current { background: var(--color-paper-4); color: var(--color-ink); font-weight: var(--weight-medium); }
+.dropdown-menu a .check { margin-left: auto; width: 14px; height: 14px; opacity: 1; color: var(--color-accent-2); }
+
 /* ---------- Tree list (Tài sản) ---------- */
 
 .tree { display: flex; flex-direction: column; }

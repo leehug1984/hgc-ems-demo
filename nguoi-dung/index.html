@@ -37,8 +37,20 @@
     <header class="topbar">
       <button class="nav-toggle" data-nav-toggle aria-label="Mở menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
       <div class="topbar-title"><h1>Người dùng &amp; Phân quyền</h1></div>
-      <button class="plant-select"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy ETEK BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-      <span class="status-pill good"><span class="dot"></span>Online</span>
+      <div class="dropdown">
+        <button class="plant-select" data-dropdown-trigger><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy ETEK BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu" style="min-width:260px">
+          <div class="menu-eyebrow">Danh mục dự án (6)</div>
+          <a href="#" class="is-current"><span class="menu-dot good"></span>Nhà máy ETEK BESS 01 · Hải Phòng<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg></a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 02 · Bắc Ninh</a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 03 · Bắc Ninh</a>
+          <a href="#"><span class="menu-dot warning"></span>Nhà máy ETEK BESS 04 · Bình Dương</a>
+          <a href="#"><span class="menu-dot critical"></span>Nhà máy ETEK BESS 05 · Nghệ An</a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 06 · Tây Ninh</a>
+          <div class="dropdown-divider"></div>
+          <a href="../dashboard/">Xem tất cả dự án →</a>
+        </div>
+      </div>      <span class="status-pill good"><span class="dot"></span>Online</span>
       <div class="topbar-spacer"></div>
       <span class="topbar-clock"><strong data-clock>10:30:00</strong></span>
       <button class="icon-btn" aria-label="Thông báo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge-dot"></span></button>

@@ -37,8 +37,20 @@
     <header class="topbar">
       <button class="nav-toggle" data-nav-toggle aria-label="Mở menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
       <div class="topbar-title"><h1>Dashboard</h1></div>
-      <button class="plant-select"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy ETEK BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
-      <span class="status-pill good"><span class="dot"></span>Online</span>
+      <div class="dropdown">
+        <button class="plant-select" data-dropdown-trigger><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy ETEK BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu" style="min-width:260px">
+          <div class="menu-eyebrow">Danh mục dự án (6)</div>
+          <a href="#" class="is-current"><span class="menu-dot good"></span>Nhà máy ETEK BESS 01 · Hải Phòng<svg class="check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 13l4 4L19 7"/></svg></a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 02 · Bắc Ninh</a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 03 · Bắc Ninh</a>
+          <a href="#"><span class="menu-dot warning"></span>Nhà máy ETEK BESS 04 · Bình Dương</a>
+          <a href="#"><span class="menu-dot critical"></span>Nhà máy ETEK BESS 05 · Nghệ An</a>
+          <a href="#"><span class="menu-dot good"></span>Nhà máy ETEK BESS 06 · Tây Ninh</a>
+          <div class="dropdown-divider"></div>
+          <a href="../dashboard/">Xem tất cả dự án →</a>
+        </div>
+      </div>      <span class="status-pill good"><span class="dot"></span>Online</span>
       <div class="topbar-spacer"></div>
       <span class="topbar-clock">17/05/2024 · <strong data-clock>10:30:00</strong> · 28°C</span>
       <button class="icon-btn" aria-label="Thông báo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge-dot"></span></button>
@@ -220,6 +232,94 @@
                   <rect class="chart-hover-target" x="40" y="10" width="540" height="180" fill="transparent"/>
                 </svg>
                 <div class="chart-tooltip"></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="page-grid" style="grid-template-columns: 1.6fr 1fr;">
+          <section class="card">
+            <div class="card-head">
+              <h2>Tất cả site (6)</h2>
+              <div class="card-head-spacer"></div>
+              <a href="../tai-san/" style="font-size:var(--text-2xs);color:var(--color-accent-2);font-weight:500">Xem tất cả site →</a>
+            </div>
+            <div class="card-body">
+              <div class="page-grid" style="grid-template-columns: 1fr 1.1fr;gap:var(--space-md);align-items:center">
+                <div class="chart-frame">
+                  <svg viewBox="0 0 200 420">
+                    <path d="M100,8 C125,10 145,22 152,45 C158,65 148,82 132,98 C118,112 108,130 100,150 C93,168 90,185 88,200 C86,215 92,228 102,240 C112,252 116,268 110,285 C104,302 98,315 96,330 C94,348 102,362 116,375 C128,386 130,398 120,408 C112,416 100,417 92,410 C86,404 88,394 84,385 L72,385 C68,372 62,358 62,342 C62,325 68,310 66,292 C64,275 58,260 60,242 C62,225 68,210 66,192 C64,175 58,158 60,140 C62,122 70,105 68,88 C66,70 72,52 82,35 C88,24 92,14 100,8 Z" style="fill:var(--color-paper-4);stroke:var(--color-rule);stroke-width:1.5"/>
+
+                    <!-- ETEK BESS 01 · Hải Phòng (current, online) -->
+                    <g transform="translate(130,55)" style="color:var(--color-good)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                    <!-- ETEK BESS 02 · Bắc Ninh (online) -->
+                    <g transform="translate(103,60) scale(0.8)" style="color:var(--color-good)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                    <!-- ETEK BESS 03 · Bắc Ninh (online) -->
+                    <g transform="translate(117,78) scale(0.8)" style="color:var(--color-good)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                    <!-- ETEK BESS 05 · Nghệ An (offline) -->
+                    <g transform="translate(83,178) scale(0.8)" style="color:var(--color-critical)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                    <!-- ETEK BESS 06 · Tây Ninh (online) -->
+                    <g transform="translate(84,358) scale(0.8)" style="color:var(--color-good)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                    <!-- ETEK BESS 04 · Bình Dương (warning) -->
+                    <g transform="translate(107,368) scale(0.8)" style="color:var(--color-warning)">
+                      <path d="M0,-16 C-6.6,-16 -12,-10.6 -12,-4 C-12,4.5 0,16 0,16 C0,16 12,4.5 12,-4 C12,-10.6 6.6,-16 0,-16 Z" fill="currentColor"/>
+                      <circle cx="0" cy="-4" r="4.2" style="fill:var(--color-paper-4)"/>
+                    </g>
+                  </svg>
+                </div>
+
+                <div class="table-wrap">
+                  <table class="data-table">
+                    <tbody>
+                      <tr><td class="wrap">ETEK BESS 01 · Hải Phòng</td><td><span class="pill good"><span class="dot"></span>Online</span></td></tr>
+                      <tr><td class="wrap">ETEK BESS 02 · Bắc Ninh</td><td><span class="pill good"><span class="dot"></span>Online</span></td></tr>
+                      <tr><td class="wrap">ETEK BESS 03 · Bắc Ninh</td><td><span class="pill good"><span class="dot"></span>Online</span></td></tr>
+                      <tr><td class="wrap">ETEK BESS 04 · Bình Dương</td><td><span class="pill warning"><span class="dot"></span>Warning</span></td></tr>
+                      <tr><td class="wrap">ETEK BESS 05 · Nghệ An</td><td><span class="pill critical"><span class="dot"></span>Offline</span></td></tr>
+                      <tr><td class="wrap">ETEK BESS 06 · Tây Ninh</td><td><span class="pill good"><span class="dot"></span>Online</span></td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card-head"><h2>Tổng hợp cảnh báo</h2></div>
+            <div class="card-body">
+              <div class="u-flex" style="justify-content:center;position:relative">
+                <svg viewBox="0 0 160 160" width="160" height="160">
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="var(--color-paper-4)" stroke-width="20"/>
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="var(--color-critical)" stroke-width="20" stroke-dasharray="81.7 326.7" stroke-dashoffset="0" transform="rotate(-90 80 80)"/>
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="var(--color-serious)" stroke-width="20" stroke-dasharray="122.5 326.7" stroke-dashoffset="-81.7" transform="rotate(-90 80 80)"/>
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="var(--color-warning)" stroke-width="20" stroke-dasharray="81.7 326.7" stroke-dashoffset="-204.2" transform="rotate(-90 80 80)"/>
+                  <circle cx="80" cy="80" r="52" fill="none" stroke="var(--color-accent-2)" stroke-width="20" stroke-dasharray="40.8 326.7" stroke-dashoffset="-285.9" transform="rotate(-90 80 80)"/>
+                </svg>
+                <div class="donut-center" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+                  <div class="value">8</div>
+                  <div class="label">Tổng</div>
+                </div>
+              </div>
+              <div class="page-grid" style="gap:8px;margin-top:var(--space-md)">
+                <div class="u-flex u-between"><span class="legend"><span class="item"><span class="swatch" style="background:var(--color-critical)"></span>Nghiêm trọng</span></span><strong class="u-mono">2</strong></div>
+                <div class="u-flex u-between"><span class="legend"><span class="item"><span class="swatch" style="background:var(--color-serious)"></span>Cao</span></span><strong class="u-mono">3</strong></div>
+                <div class="u-flex u-between"><span class="legend"><span class="item"><span class="swatch" style="background:var(--color-warning)"></span>Trung bình</span></span><strong class="u-mono">2</strong></div>
+                <div class="u-flex u-between"><span class="legend"><span class="item"><span class="swatch" style="background:var(--color-accent-2)"></span>Thấp</span></span><strong class="u-mono">1</strong></div>
               </div>
             </div>
           </section>
