@@ -3,11 +3,16 @@
 (function () {
   "use strict";
 
+  function slugOf(path) {
+    var parts = path.split("/").filter(function (p) { return p && p !== "index.html"; });
+    return parts[parts.length - 1] || "dashboard";
+  }
+
   function markActiveNav() {
-    var file = location.pathname.split("/").pop() || "dashboard.html";
+    var current = slugOf(location.pathname);
     document.querySelectorAll(".sidebar-nav a").forEach(function (a) {
       var href = a.getAttribute("href");
-      if (href === file) a.classList.add("is-active");
+      if (href && slugOf(href) === current) a.classList.add("is-active");
     });
   }
 
