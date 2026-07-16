@@ -30,6 +30,10 @@
   --color-accent-2-wash: oklch(74% 0.12 195 / 14%);
   --color-focus: oklch(76% 0.20 250);
 
+  /* Brand mark (ETEK Power wordmark + icon) */
+  --color-brand-green: oklch(46% 0.11 150);
+  --color-brand-red: oklch(54% 0.20 25);
+
   /* Status (fixed — never reused for chart series) */
   --color-good: #0ca30c;
   --color-good-wash: rgb(12 163 12 / 14%);
