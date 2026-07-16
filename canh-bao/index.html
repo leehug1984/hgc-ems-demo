@@ -19,6 +19,7 @@
     </div>
     <nav class="sidebar-nav">
       <a href="../dashboard/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a href="../quan-ly-site/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="9" r="2.5"/></svg>Quản lý site</a>
       <a href="../giam-sat/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 8 4-16 2 8h4"/></svg>Giám sát</a>
       <a href="../so-do/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 15M16 7.5 13 15"/></svg>Sơ đồ</a>
       <a href="../dieu-khien/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/></svg>Điều khiển</a>
@@ -85,30 +86,31 @@
 
           <div data-panel="current" class="tab-panel is-active">
             <div class="u-flex u-gap-sm u-wrap" style="margin-bottom:var(--space-md)">
-              <select class="select" style="width:auto">
-                <option>Tất cả mức độ</option>
-                <option>Nghiêm trọng</option>
-                <option>Cao</option>
-                <option>Trung bình</option>
+              <select class="select" style="width:auto" data-alarm-filter="severity">
+                <option value="all">Tất cả mức độ</option>
+                <option value="critical">Nghiêm trọng</option>
+                <option value="serious">Cao</option>
+                <option value="warning">Trung bình</option>
               </select>
-              <select class="select" style="width:auto">
-                <option>Tất cả trạng thái</option>
-                <option>Chưa xác nhận</option>
-                <option>Đã xác nhận</option>
+              <select class="select" style="width:auto" data-alarm-filter="status">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="unack">Chưa xác nhận</option>
+                <option value="ack">Đã xác nhận</option>
               </select>
               <div style="flex:1"></div>
               <button class="btn btn-primary" data-demo-loading>Xác nhận tất cả</button>
             </div>
+            <p class="u-muted" data-alarm-empty style="display:none;font-size:var(--text-xs);padding:var(--space-md) 0">Không có cảnh báo nào khớp bộ lọc đã chọn.</p>
             <div class="table-wrap">
-              <table class="data-table">
+              <table class="data-table" data-alarm-table>
                 <thead><tr><th>Thời gian</th><th>Nguồn</th><th>Mức độ</th><th>Thông điệp</th><th>Trạng thái</th><th></th></tr></thead>
                 <tbody>
-                  <tr><td class="u-mono">17/05/2024 10:28:45</td><td>PCS 02</td><td><span class="pill critical"><span class="dot"></span>Nghiêm trọng</span></td><td class="wrap">DC Over Voltage</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
-                  <tr><td class="u-mono">17/05/2024 10:27:11</td><td>Battery Rack 04</td><td><span class="pill serious"><span class="dot"></span>Cao</span></td><td class="wrap">Nhiệt độ cao</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
-                  <tr><td class="u-mono">17/05/2024 10:26:33</td><td>BMS</td><td><span class="pill warning"><span class="dot"></span>Trung bình</span></td><td class="wrap">Cảnh báo SOC thấp</td><td><span class="pill good"><span class="dot"></span>Đã xác nhận</span></td><td><span class="u-muted" style="font-size:var(--text-2xs)">—</span></td></tr>
-                  <tr><td class="u-mono">17/05/2024 10:25:07</td><td>HVAC 01</td><td><span class="pill serious"><span class="dot"></span>Cao</span></td><td class="wrap">Quạt làm mát lỗi</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
-                  <tr><td class="u-mono">17/05/2024 10:24:12</td><td>Meter 01</td><td><span class="pill warning"><span class="dot"></span>Trung bình</span></td><td class="wrap">Mất kết nối</td><td><span class="pill good"><span class="dot"></span>Đã xác nhận</span></td><td><span class="u-muted" style="font-size:var(--text-2xs)">—</span></td></tr>
-                  <tr><td class="u-mono">17/05/2024 10:23:00</td><td>Fire System</td><td><span class="pill critical"><span class="dot"></span>Nghiêm trọng</span></td><td class="wrap">Smoke Detected</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
+                  <tr data-severity="critical" data-status="unack"><td class="u-mono">17/05/2024 10:28:45</td><td>PCS 02</td><td><span class="pill critical"><span class="dot"></span>Nghiêm trọng</span></td><td class="wrap">DC Over Voltage</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
+                  <tr data-severity="serious" data-status="unack"><td class="u-mono">17/05/2024 10:27:11</td><td>Battery Rack 04</td><td><span class="pill serious"><span class="dot"></span>Cao</span></td><td class="wrap">Nhiệt độ cao</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
+                  <tr data-severity="warning" data-status="ack"><td class="u-mono">17/05/2024 10:26:33</td><td>BMS</td><td><span class="pill warning"><span class="dot"></span>Trung bình</span></td><td class="wrap">Cảnh báo SOC thấp</td><td><span class="pill good"><span class="dot"></span>Đã xác nhận</span></td><td><span class="u-muted" style="font-size:var(--text-2xs)">—</span></td></tr>
+                  <tr data-severity="serious" data-status="unack"><td class="u-mono">17/05/2024 10:25:07</td><td>HVAC 01</td><td><span class="pill serious"><span class="dot"></span>Cao</span></td><td class="wrap">Quạt làm mát lỗi</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
+                  <tr data-severity="warning" data-status="ack"><td class="u-mono">17/05/2024 10:24:12</td><td>Meter 01</td><td><span class="pill warning"><span class="dot"></span>Trung bình</span></td><td class="wrap">Mất kết nối</td><td><span class="pill good"><span class="dot"></span>Đã xác nhận</span></td><td><span class="u-muted" style="font-size:var(--text-2xs)">—</span></td></tr>
+                  <tr data-severity="critical" data-status="unack"><td class="u-mono">17/05/2024 10:23:00</td><td>Fire System</td><td><span class="pill critical"><span class="dot"></span>Nghiêm trọng</span></td><td class="wrap">Smoke Detected</td><td><span class="pill neutral">Chưa xác nhận</span></td><td><button class="btn btn-outline">Xác nhận</button></td></tr>
                 </tbody>
               </table>
             </div>

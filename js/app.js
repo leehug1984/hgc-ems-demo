@@ -116,6 +116,31 @@
     });
   }
 
+  // Alarm list filters — severity + status selects narrow the visible rows
+  function alarmFilters() {
+    var table = document.querySelector("[data-alarm-table]");
+    var selects = document.querySelectorAll("[data-alarm-filter]");
+    if (!table || selects.length === 0) return;
+    var empty = document.querySelector("[data-alarm-empty]");
+    var rows = table.querySelectorAll("tbody tr");
+
+    function apply() {
+      var severity = document.querySelector("[data-alarm-filter='severity']").value;
+      var status = document.querySelector("[data-alarm-filter='status']").value;
+      var visible = 0;
+      rows.forEach(function (row) {
+        var matchSeverity = severity === "all" || row.getAttribute("data-severity") === severity;
+        var matchStatus = status === "all" || row.getAttribute("data-status") === status;
+        var show = matchSeverity && matchStatus;
+        row.style.display = show ? "" : "none";
+        if (show) visible++;
+      });
+      if (empty) empty.style.display = visible === 0 ? "block" : "none";
+    }
+
+    selects.forEach(function (s) { s.addEventListener("change", apply); });
+  }
+
   // Generic tooltip/crosshair for line charts built with .chart-frame svg + [data-x] points
   function chartHover() {
     document.querySelectorAll(".chart-frame[data-hover]").forEach(function (frame) {
@@ -193,5 +218,6 @@
     clock();
     loadingButtons();
     chartHover();
+    alarmFilters();
   });
 })();
