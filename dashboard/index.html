@@ -105,16 +105,11 @@
             <div class="card-body">
               <div class="diagram-frame chart-frame" style="background:none">
                 <svg viewBox="0 0 460 270">
-                  <defs>
-                    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--color-good)"/></marker>
-                    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--chart-5)"/></marker>
-                  </defs>
-
-                  <!-- flow lines — orthogonal, one flow per node, correct direction per sign convention -->
-                  <path class="wire" d="M102 58 L200 58 L200 120" style="stroke:var(--color-good)" marker-end="url(#arrow-green)"/>
-                  <path class="wire" d="M200 120 L200 182 L102 182" style="stroke:var(--color-good)" marker-end="url(#arrow-green)"/>
-                  <path class="wire" d="M358 58 L260 58 L260 120" style="stroke:var(--chart-5)" marker-end="url(#arrow-orange)"/>
-                  <path class="wire" d="M260 120 L260 182 L358 182" style="stroke:var(--chart-5)" marker-end="url(#arrow-orange)"/>
+                  <!-- flow lines — orthogonal; direction now carried by the traveling light dot only -->
+                  <path class="wire" d="M102 58 L200 58 L200 120" style="stroke:var(--color-good)"/>
+                  <path class="wire" d="M200 120 L200 182 L102 182" style="stroke:var(--color-good)"/>
+                  <path class="wire" d="M358 58 L260 58 L260 120" style="stroke:var(--chart-5)"/>
+                  <path class="wire" d="M260 120 L260 182 L358 182" style="stroke:var(--chart-5)"/>
 
                   <!-- traveling light per connector — speed scaled to each flow's magnitude (1.25/1.20/0.65/2.85 MW) -->
                   <circle class="flow-dot green" r="3.5" style="offset-path:path('M102 58 L200 58 L200 120');animation-duration:2.4s"/>
