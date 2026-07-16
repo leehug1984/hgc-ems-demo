@@ -15,7 +15,6 @@
   <div class="sidebar-scrim"></div>
   <aside class="sidebar">
     <div class="sidebar-brand">
-      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 12C12 7 16 5 21 7 19 11 15 13 12 12Z" fill="var(--color-brand-red)"/><path d="M12 12C12 7 16 5 21 7 19 11 15 13 12 12Z" fill="var(--color-brand-green)" transform="rotate(90 12 12)"/><path d="M12 12C12 7 16 5 21 7 19 11 15 13 12 12Z" fill="var(--color-brand-red)" transform="rotate(180 12 12)"/><path d="M12 12C12 7 16 5 21 7 19 11 15 13 12 12Z" fill="var(--color-brand-green)" transform="rotate(270 12 12)"/></svg></div>
       <div><strong><span class="brand-a">ETEK</span> <span class="brand-b">POWER</span> Cloud EMS</strong><span>Energy management</span></div>
     </div>
     <nav class="sidebar-nav">
@@ -105,67 +104,71 @@
             <div class="card-head"><h2>Sơ đồ dòng năng lượng</h2></div>
             <div class="card-body">
               <div class="diagram-frame chart-frame" style="background:none">
-                <svg viewBox="0 0 400 320">
+                <svg viewBox="0 0 460 270">
                   <defs>
-                    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--color-accent-2)"/></marker>
+                    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--color-good)"/></marker>
+                    <marker id="arrow-orange" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="var(--chart-5)"/></marker>
                   </defs>
 
-                  <!-- flow lines — orthogonal (right-angle) routing into the AC bus trunk -->
-                  <path class="wire" d="M90 98 L90 138 L200 138" marker-end="url(#arrow)"/>
-                  <path class="wire" d="M310 98 L310 146 L200 146" marker-end="url(#arrow)"/>
-                  <path class="wire" d="M200 154 L90 154 L90 202" marker-end="url(#arrow)"/>
-                  <path class="wire" d="M200 162 L310 162 L310 202" marker-end="url(#arrow)"/>
+                  <!-- flow lines — orthogonal, one flow per node, correct direction per sign convention -->
+                  <path class="wire" d="M102 58 L200 58 L200 120" style="stroke:var(--color-good)" marker-end="url(#arrow-green)"/>
+                  <path class="wire" d="M200 120 L200 182 L102 182" style="stroke:var(--color-good)" marker-end="url(#arrow-green)"/>
+                  <path class="wire" d="M358 58 L260 58 L260 120" style="stroke:var(--chart-5)" marker-end="url(#arrow-orange)"/>
+                  <path class="wire" d="M260 120 L260 182 L358 182" style="stroke:var(--chart-5)" marker-end="url(#arrow-orange)"/>
 
-                  <!-- central AC bus trunk -->
-                  <line x1="200" y1="130" x2="200" y2="166" style="stroke:var(--color-accent);stroke-width:3"/>
-                  <text class="node-sub" x="214" y="146">AC BUS</text>
-                  <text class="node-label" x="214" y="163" style="font-weight:600">2.45 MW</text>
+                  <!-- AC bus -->
+                  <line x1="200" y1="120" x2="260" y2="120" style="stroke:var(--color-accent);stroke-width:3"/>
+                  <text class="node-sub" x="230" y="105" text-anchor="middle">AC BUS</text>
+                  <text class="node-label" x="230" y="145" text-anchor="middle" style="font-weight:600">2.45 MW</text>
+                  <circle cx="230" cy="157" r="3" style="fill:var(--color-good)"/>
 
-                  <!-- PV -->
+                  <!-- PV — generates into the bus -->
                   <g class="dnode">
-                    <circle cx="90" cy="66" r="32" style="fill:var(--color-paper-4);stroke:var(--color-warning);stroke-width:2"/>
-                    <g transform="translate(90,66)" style="color:var(--color-warning)">
+                    <circle cx="75" cy="58" r="27" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:2"/>
+                    <g transform="translate(75,58)" style="color:var(--color-good)">
                       <circle r="7" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <path d="M0 -15v3M0 12v3M-15 0h3M12 0h3M-10.6 -10.6l2.1 2.1M8.5 8.5l2.1 2.1M-10.6 10.6l2.1-2.1M8.5 -8.5l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
                     </g>
-                    <circle class="status-on" cx="114" cy="42" r="3.5"/>
-                    <text class="node-label" x="90" y="118" text-anchor="middle" style="font-weight:600">PV</text>
-                    <text class="node-sub" x="90" y="134" text-anchor="middle">1.25 MW</text>
+                    <circle class="status-on" cx="97" cy="37" r="3.5"/>
+                    <text class="node-label" x="75" y="18" text-anchor="middle" style="font-weight:600">PV</text>
+                    <text class="node-sub" x="75" y="105" text-anchor="middle">1.25 MW</text>
                   </g>
 
-                  <!-- Lưới điện / Grid -->
+                  <!-- BESS — charging, draws from the bus -->
                   <g class="dnode">
-                    <circle cx="310" cy="66" r="32" style="fill:var(--color-paper-4);stroke:var(--color-accent);stroke-width:2"/>
-                    <g transform="translate(310,66)" style="color:var(--color-accent)">
-                      <path d="M0 -16 -9 16 M0 -16 9 16 M-5.5 -4 H5.5 M-7 3 H7 M-8.5 10 H8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
-                    </g>
-                    <circle class="status-on" cx="334" cy="42" r="3.5"/>
-                    <text class="node-label" x="310" y="118" text-anchor="middle" style="font-weight:600">Lưới điện</text>
-                    <text class="node-sub" x="310" y="134" text-anchor="middle">0.65 MW · Nhập</text>
-                  </g>
-
-                  <!-- BESS -->
-                  <g class="dnode">
-                    <circle cx="90" cy="234" r="32" style="fill:var(--color-paper-4);stroke:var(--color-accent-2);stroke-width:2"/>
-                    <g transform="translate(90,234)" style="color:var(--color-accent-2)">
+                    <circle cx="75" cy="182" r="27" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:2"/>
+                    <g transform="translate(75,182)" style="color:var(--color-good)">
                       <rect x="-6" y="-14" width="12" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <rect x="-3" y="-18" width="6" height="4" fill="currentColor" stroke="none"/>
                     </g>
-                    <circle class="status-on" cx="114" cy="210" r="3.5"/>
-                    <text class="node-label" x="90" y="286" text-anchor="middle" style="font-weight:600">BESS</text>
-                    <text class="node-sub" x="90" y="302" text-anchor="middle">-1.20 MW</text>
+                    <circle class="status-on" cx="97" cy="161" r="3.5"/>
+                    <text class="node-label" x="75" y="142" text-anchor="middle" style="font-weight:600">BESS</text>
+                    <text class="node-sub" x="75" y="227" text-anchor="middle">-1.20 MW</text>
+                    <text class="node-sub" x="75" y="243" text-anchor="middle" style="fill:var(--color-good)">68%</text>
                   </g>
 
-                  <!-- Tải / Load -->
+                  <!-- Lưới điện / Grid — importing into the bus -->
                   <g class="dnode">
-                    <circle cx="310" cy="234" r="32" style="fill:var(--color-paper-4);stroke:oklch(72% 0.14 300);stroke-width:2"/>
-                    <g transform="translate(310,234)" style="color:oklch(78% 0.13 300)">
+                    <circle cx="385" cy="58" r="27" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:2"/>
+                    <g transform="translate(385,58)" style="color:var(--chart-5)">
+                      <path d="M0 -16 -9 16 M0 -16 9 16 M-5.5 -4 H5.5 M-7 3 H7 M-8.5 10 H8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                    </g>
+                    <circle class="status-on" cx="407" cy="37" r="3.5"/>
+                    <text class="node-label" x="385" y="18" text-anchor="middle" style="font-weight:600">Lưới điện</text>
+                    <text class="node-sub" x="385" y="105" text-anchor="middle">0.65 MW</text>
+                    <text class="node-sub" x="385" y="121" text-anchor="middle" style="fill:var(--color-good)">Nhập</text>
+                  </g>
+
+                  <!-- Tải / Load — consuming from the bus -->
+                  <g class="dnode">
+                    <circle cx="385" cy="182" r="27" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:2"/>
+                    <g transform="translate(385,182)" style="color:var(--chart-5)">
                       <path d="M-9 14V-3l9-7 9 7v17" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <path d="M-4 14V6h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/>
                     </g>
-                    <circle class="status-on" cx="334" cy="210" r="3.5"/>
-                    <text class="node-label" x="310" y="286" text-anchor="middle" style="font-weight:600">Tải</text>
-                    <text class="node-sub" x="310" y="302" text-anchor="middle">2.85 MW</text>
+                    <circle class="status-on" cx="407" cy="161" r="3.5"/>
+                    <text class="node-label" x="385" y="142" text-anchor="middle" style="font-weight:600">Tải</text>
+                    <text class="node-sub" x="385" y="227" text-anchor="middle">2.85 MW</text>
                   </g>
                 </svg>
               </div>
