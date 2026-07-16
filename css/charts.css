@@ -10,6 +10,24 @@
 .chart-frame .series-line { fill: none; stroke-width: 2; }
 .chart-frame .series-area { opacity: 0.14; }
 
+/* Flow-dot — traveling light along a connector, direction = power flow, speed = magnitude */
+@keyframes flow-move {
+  from { offset-distance: 0%; }
+  to { offset-distance: 100%; }
+}
+.flow-dot {
+  offset-rotate: 0deg;
+  animation-name: flow-move;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.flow-dot.green { fill: var(--color-good); filter: drop-shadow(0 0 3px var(--color-good)); }
+.flow-dot.orange { fill: var(--chart-5); filter: drop-shadow(0 0 3px var(--chart-5)); }
+
+@media (prefers-reduced-motion: reduce) {
+  .flow-dot { animation: none; offset-distance: 50%; }
+}
+
 .chart-hover-target { cursor: crosshair; }
 
 .chart-tooltip {
