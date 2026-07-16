@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Điều khiển · HGC Cloud EMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/charts.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-scrim"></div>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="white"/></svg></div>
+      <div><strong>HGC Cloud EMS</strong><span>Energy management</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a href="giam-sat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 8 4-16 2 8h4"/></svg>Giám sát</a>
+      <a href="so-do.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 15M16 7.5 13 15"/></svg>Sơ đồ</a>
+      <a href="dieu-khien.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/></svg>Điều khiển</a>
+      <a href="ems-control-chi-tiet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>EMS Control (chi tiết)</a>
+      <a href="lich-trinh.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Lịch trình</a>
+      <a href="canh-bao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>Cảnh báo<span class="num">8</span></a>
+      <a href="bao-cao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M9 12h7M9 16h7M9 8h3"/></svg>Báo cáo</a>
+      <a href="tai-san.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>Tài sản</a>
+      <a href="xu-huong.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg>Xu hướng</a>
+      <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>Cài đặt</a>
+      <a href="nguoi-dung.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M15.6 14.3c2.9.4 4.9 2.6 4.9 5.7"/></svg>Người dùng &amp; Phân quyền</a>
+    </nav>
+    <div class="sidebar-foot">HGC Power · v2.4.1</div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <button class="nav-toggle" data-nav-toggle aria-label="Mở menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="topbar-title"><h1>Điều khiển</h1></div>
+      <button class="plant-select"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy HGC BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <span class="status-pill good"><span class="dot"></span>Online</span>
+      <div class="topbar-spacer"></div>
+      <span class="topbar-clock"><strong data-clock>10:30:00</strong></span>
+      <button class="icon-btn" aria-label="Thông báo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge-dot"></span></button>
+      <button class="icon-btn" aria-label="Trợ giúp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.5-1.5 1-1.5 2.2"/><path d="M12 17h.01"/></svg></button>
+      <div class="dropdown">
+        <button class="user-chip" data-dropdown-trigger><span class="av">A</span><span>Admin</span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>Hồ sơ cá nhân</a>
+          <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M4 12h2m12 0h2M12 4v2m0 12v2"/></svg>Cài đặt</a>
+          <div class="dropdown-divider"></div>
+          <button type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <div class="card-head">
+          <div class="tabs" data-tabs="control">
+            <button class="is-active" data-target="ems">EMS Control</button>
+            <button data-target="pcs">PCS Control</button>
+            <button data-target="bess">BESS Control</button>
+          </div>
+        </div>
+        <div class="card-body" data-panel-group="control">
+
+          <div data-panel="ems" class="tab-panel is-active">
+            <div class="page-grid" style="grid-template-columns: 1.3fr 1fr;">
+              <div class="card" style="box-shadow:none">
+                <div class="card-head"><h2>Chế độ điều khiển</h2></div>
+                <div class="card-body">
+                  <div class="page-grid" style="gap:var(--space-md)">
+                    <div class="u-flex u-between" style="flex-wrap:wrap;gap:var(--space-md)">
+                      <div class="field" style="min-width:220px;flex:1">
+                        <label>Chế độ</label>
+                        <select class="select">
+                          <option>Peak Shaving</option>
+                          <option>Load Shifting</option>
+                          <option>Time of Use</option>
+                          <option>Frequency Support</option>
+                        </select>
+                      </div>
+                      <div class="field">
+                        <label>Trạng thái</label>
+                        <span class="pill good" style="padding:8px 12px;font-size:var(--text-xs)"><span class="dot"></span>Running</span>
+                      </div>
+                      <div class="field">
+                        <label>Bật / Tắt</label>
+                        <label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label style="font-size:var(--text-2xs);color:var(--color-muted);display:block;margin-bottom:var(--space-xs)">Setpoint</label>
+                      <div class="page-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-sm)">
+                        <div class="field">
+                          <label>P Setpoint</label>
+                          <div class="input-group"><input class="input" value="1.200"><span class="unit">MW</span></div>
+                        </div>
+                        <button class="btn btn-outline" style="align-self:end">Đặt</button>
+                        <div class="field">
+                          <label>Q Setpoint</label>
+                          <div class="input-group"><input class="input" value="0.300"><span class="unit">MVAr</span></div>
+                        </div>
+                        <button class="btn btn-outline" style="align-self:end">Đặt</button>
+                        <div class="field">
+                          <label>SOC Min</label>
+                          <div class="input-group"><input class="input" value="20"><span class="unit">%</span></div>
+                        </div>
+                        <button class="btn btn-outline" style="align-self:end">Đặt</button>
+                        <div class="field">
+                          <label>SOC Max</label>
+                          <div class="input-group"><input class="input" value="90"><span class="unit">%</span></div>
+                        </div>
+                        <button class="btn btn-outline" style="align-self:end">Đặt</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card" style="box-shadow:none">
+                <div class="card-head"><h2>Điều khiển nhanh</h2></div>
+                <div class="card-body">
+                  <div class="page-grid" style="gap:var(--space-sm)">
+                    <button class="btn btn-success btn-block" data-demo-loading><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 4l14 8-14 8V4Z"/></svg>Start EMS</button>
+                    <button class="btn btn-danger btn-block" data-demo-loading><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>Stop EMS</button>
+                    <div class="page-grid" style="grid-template-columns:1fr 1fr;gap:var(--space-sm)">
+                      <button class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg>Charge</button>
+                      <button class="btn btn-outline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 22 4 10h6l-1-8 9 12h-6l1 8Z"/></svg>Discharge</button>
+                    </div>
+                    <button class="btn btn-outline btn-block"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>Idle</button>
+                    <button class="btn btn-primary btn-block" data-demo-loading style="margin-top:var(--space-sm)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2Z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg>Lưu cấu hình</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-panel="pcs" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>PCS</th><th>Trạng thái</th><th class="num">P (kW)</th><th class="num">Q (kVAr)</th><th>Bật/Tắt</th><th></th></tr></thead>
+                <tbody>
+                  <tr><td>PCS 01</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">625</td><td class="num">150</td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td><td><button class="btn btn-outline">Chi tiết</button></td></tr>
+                  <tr><td>PCS 02</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">600</td><td class="num">140</td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td><td><button class="btn btn-outline">Chi tiết</button></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div data-panel="bess" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Rack</th><th class="num">SOC (%)</th><th>Chế độ cân bằng</th><th>Trạng thái</th><th>Bật/Tắt</th></tr></thead>
+                <tbody>
+                  <tr><td>Rack 01</td><td class="num">68</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Rack 02</td><td class="num">66</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Rack 03</td><td class="num">70</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Rack 04</td><td class="num">65</td><td>Manual</td><td><span class="pill warning"><span class="dot"></span>SOC thấp</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

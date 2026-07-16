@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xu hướng · HGC Cloud EMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/charts.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-scrim"></div>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="white"/></svg></div>
+      <div><strong>HGC Cloud EMS</strong><span>Energy management</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a href="giam-sat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 8 4-16 2 8h4"/></svg>Giám sát</a>
+      <a href="so-do.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 15M16 7.5 13 15"/></svg>Sơ đồ</a>
+      <a href="dieu-khien.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/></svg>Điều khiển</a>
+      <a href="ems-control-chi-tiet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>EMS Control (chi tiết)</a>
+      <a href="lich-trinh.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Lịch trình</a>
+      <a href="canh-bao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>Cảnh báo<span class="num">8</span></a>
+      <a href="bao-cao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M9 12h7M9 16h7M9 8h3"/></svg>Báo cáo</a>
+      <a href="tai-san.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>Tài sản</a>
+      <a href="xu-huong.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg>Xu hướng</a>
+      <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>Cài đặt</a>
+      <a href="nguoi-dung.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M15.6 14.3c2.9.4 4.9 2.6 4.9 5.7"/></svg>Người dùng &amp; Phân quyền</a>
+    </nav>
+    <div class="sidebar-foot">HGC Power · v2.4.1</div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <button class="nav-toggle" data-nav-toggle aria-label="Mở menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="topbar-title"><h1>Xu hướng</h1></div>
+      <button class="plant-select"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy HGC BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <span class="status-pill good"><span class="dot"></span>Online</span>
+      <div class="topbar-spacer"></div>
+      <span class="topbar-clock"><strong data-clock>10:30:00</strong></span>
+      <button class="icon-btn" aria-label="Thông báo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge-dot"></span></button>
+      <button class="icon-btn" aria-label="Trợ giúp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.5-1.5 1-1.5 2.2"/><path d="M12 17h.01"/></svg></button>
+      <div class="dropdown">
+        <button class="user-chip" data-dropdown-trigger><span class="av">A</span><span>Admin</span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>Hồ sơ cá nhân</a>
+          <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M4 12h2m12 0h2M12 4v2m0 12v2"/></svg>Cài đặt</a>
+          <div class="dropdown-divider"></div>
+          <button type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="card">
+        <div class="card-head">
+          <h2>Chọn tín hiệu</h2>
+          <div class="dial-group" style="margin-left:var(--space-sm)">
+            <button class="is-active">P (kW)</button>
+            <button class="is-active">SOC (%)</button>
+            <button class="is-active">Nhiệt độ (°C)</button>
+            <button aria-label="Thêm tín hiệu">+</button>
+          </div>
+          <div class="card-head-spacer"></div>
+          <button class="plant-select" style="font-size:var(--text-2xs)">Hôm nay<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 9l6 6 6-6"/></svg></button>
+          <button class="btn btn-ghost"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15V3m0 12l-4-4m4 4 4-4"/><path d="M3 17v2a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2"/></svg>Xuất</button>
+        </div>
+        <div class="card-body">
+          <p class="u-muted" style="font-size:var(--text-2xs);margin-bottom:var(--space-md)">Mỗi tín hiệu có thang đo riêng — hiển thị dạng biểu đồ xếp chồng để tránh nhầm lẫn giữa các đơn vị đo (kW / % / °C).</p>
+
+          <div class="page-grid" style="gap:var(--space-lg)">
+
+            <div>
+              <div class="u-flex u-between" style="margin-bottom:6px">
+                <span class="legend"><span class="item"><span class="swatch line" style="background:var(--chart-1)"></span>P (kW)</span></span>
+                <span class="u-mono" style="font-size:var(--text-2xs);color:var(--color-muted)">min -1,200 · max 2,450</span>
+              </div>
+              <div class="chart-frame" data-hover>
+                <svg viewBox="0 0 1000 140" preserveAspectRatio="none">
+                  <line class="grid-line" x1="10" y1="20" x2="990" y2="20"/>
+                  <line class="baseline" x1="10" y1="70" x2="990" y2="70"/>
+                  <line class="grid-line" x1="10" y1="120" x2="990" y2="120"/>
+                  <polyline class="series-line" stroke="var(--chart-1)" points="10,60 150,55 290,40 430,25 570,22 710,45 850,58 990,62"/>
+                  <line class="chart-crosshair" x1="10" y1="10" x2="10" y2="130"/>
+                  <circle class="chart-point" cx="10" cy="60" r="4" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"P","value":"1.6 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="150" cy="55" r="4" stroke="var(--chart-1)" data-label="03:00" data-rows='[{"name":"P","value":"1.8 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="290" cy="40" r="4" stroke="var(--chart-1)" data-label="06:00" data-rows='[{"name":"P","value":"2.1 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="430" cy="25" r="4" stroke="var(--chart-1)" data-label="09:00" data-rows='[{"name":"P","value":"2.4 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="570" cy="22" r="4" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"P","value":"2.45 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="710" cy="45" r="4" stroke="var(--chart-1)" data-label="15:00" data-rows='[{"name":"P","value":"2.1 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="850" cy="58" r="4" stroke="var(--chart-1)" data-label="18:00" data-rows='[{"name":"P","value":"1.7 MW","color":"var(--chart-1)"}]'/>
+                  <circle class="chart-point" cx="990" cy="62" r="4" stroke="var(--chart-1)" data-label="21:00" data-rows='[{"name":"P","value":"1.6 MW","color":"var(--chart-1)"}]'/>
+                  <rect class="chart-hover-target" x="10" y="10" width="980" height="120" fill="transparent"/>
+                </svg>
+                <div class="chart-tooltip"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="u-flex u-between" style="margin-bottom:6px">
+                <span class="legend"><span class="item"><span class="swatch line" style="background:var(--chart-3)"></span>SOC (%)</span></span>
+                <span class="u-mono" style="font-size:var(--text-2xs);color:var(--color-muted)">min 42 · max 70</span>
+              </div>
+              <div class="chart-frame" data-hover>
+                <svg viewBox="0 0 1000 140" preserveAspectRatio="none">
+                  <line class="grid-line" x1="10" y1="20" x2="990" y2="20"/>
+                  <line class="baseline" x1="10" y1="70" x2="990" y2="70"/>
+                  <line class="grid-line" x1="10" y1="120" x2="990" y2="120"/>
+                  <polyline class="series-line" stroke="var(--chart-3)" points="10,90 150,95 290,70 430,40 570,25 710,45 850,65 990,80"/>
+                  <line class="chart-crosshair" x1="10" y1="10" x2="10" y2="130"/>
+                  <circle class="chart-point" cx="10" cy="90" r="4" stroke="var(--chart-3)" data-label="00:00" data-rows='[{"name":"SOC","value":"45%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="150" cy="95" r="4" stroke="var(--chart-3)" data-label="03:00" data-rows='[{"name":"SOC","value":"42%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="290" cy="70" r="4" stroke="var(--chart-3)" data-label="06:00" data-rows='[{"name":"SOC","value":"52%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="430" cy="40" r="4" stroke="var(--chart-3)" data-label="09:00" data-rows='[{"name":"SOC","value":"63%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="570" cy="25" r="4" stroke="var(--chart-3)" data-label="12:00" data-rows='[{"name":"SOC","value":"68%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="710" cy="45" r="4" stroke="var(--chart-3)" data-label="15:00" data-rows='[{"name":"SOC","value":"61%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="850" cy="65" r="4" stroke="var(--chart-3)" data-label="18:00" data-rows='[{"name":"SOC","value":"53%","color":"var(--chart-3)"}]'/>
+                  <circle class="chart-point" cx="990" cy="80" r="4" stroke="var(--chart-3)" data-label="21:00" data-rows='[{"name":"SOC","value":"48%","color":"var(--chart-3)"}]'/>
+                  <rect class="chart-hover-target" x="10" y="10" width="980" height="120" fill="transparent"/>
+                </svg>
+                <div class="chart-tooltip"></div>
+              </div>
+            </div>
+
+            <div>
+              <div class="u-flex u-between" style="margin-bottom:6px">
+                <span class="legend"><span class="item"><span class="swatch line" style="background:var(--chart-5)"></span>Nhiệt độ (°C)</span></span>
+                <span class="u-mono" style="font-size:var(--text-2xs);color:var(--color-muted)">min 22.4 · max 31.4</span>
+              </div>
+              <div class="chart-frame" data-hover>
+                <svg viewBox="0 0 1000 140" preserveAspectRatio="none">
+                  <line class="grid-line" x1="10" y1="20" x2="990" y2="20"/>
+                  <line class="baseline" x1="10" y1="70" x2="990" y2="70"/>
+                  <line class="grid-line" x1="10" y1="120" x2="990" y2="120"/>
+                  <polyline class="series-line" stroke="var(--chart-5)" points="10,100 150,102 290,90 430,60 570,35 710,32 850,55 990,85"/>
+                  <line class="chart-crosshair" x1="10" y1="10" x2="10" y2="130"/>
+                  <circle class="chart-point" cx="10" cy="100" r="4" stroke="var(--chart-5)" data-label="00:00" data-rows='[{"name":"Nhiệt độ","value":"23.1°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="150" cy="102" r="4" stroke="var(--chart-5)" data-label="03:00" data-rows='[{"name":"Nhiệt độ","value":"22.4°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="290" cy="90" r="4" stroke="var(--chart-5)" data-label="06:00" data-rows='[{"name":"Nhiệt độ","value":"24.6°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="430" cy="60" r="4" stroke="var(--chart-5)" data-label="09:00" data-rows='[{"name":"Nhiệt độ","value":"27.9°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="570" cy="35" r="4" stroke="var(--chart-5)" data-label="12:00" data-rows='[{"name":"Nhiệt độ","value":"31.4°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="710" cy="32" r="4" stroke="var(--chart-5)" data-label="15:00" data-rows='[{"name":"Nhiệt độ","value":"30.8°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="850" cy="55" r="4" stroke="var(--chart-5)" data-label="18:00" data-rows='[{"name":"Nhiệt độ","value":"28.2°C","color":"var(--chart-5)"}]'/>
+                  <circle class="chart-point" cx="990" cy="85" r="4" stroke="var(--chart-5)" data-label="21:00" data-rows='[{"name":"Nhiệt độ","value":"25.0°C","color":"var(--chart-5)"}]'/>
+                  <rect class="chart-hover-target" x="10" y="10" width="980" height="120" fill="transparent"/>
+                </svg>
+                <div class="chart-tooltip"></div>
+              </div>
+              <div class="u-flex u-between" style="margin-top:6px">
+                <span class="axis-label u-mono" style="font-size:var(--text-3xs);color:var(--color-muted)">00:00</span>
+                <span class="axis-label u-mono" style="font-size:var(--text-3xs);color:var(--color-muted)">06:00</span>
+                <span class="axis-label u-mono" style="font-size:var(--text-3xs);color:var(--color-muted)">12:00</span>
+                <span class="axis-label u-mono" style="font-size:var(--text-3xs);color:var(--color-muted)">18:00</span>
+                <span class="axis-label u-mono" style="font-size:var(--text-3xs);color:var(--color-muted)">24:00</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>

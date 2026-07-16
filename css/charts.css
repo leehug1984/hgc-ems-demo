@@ -1,0 +1,102 @@
+/* Hallmark · chart chrome — axes, tooltip, legend, gantt/schedule, one-line diagram */
+
+.chart-frame { position: relative; width: 100%; }
+.chart-frame svg { display: block; width: 100%; height: auto; overflow: visible; }
+
+.chart-frame .grid-line { stroke: var(--chart-grid); stroke-width: 1; }
+.chart-frame .axis-label { fill: var(--chart-axis); font-family: var(--font-mono); font-size: 9.5px; }
+.chart-frame .baseline { stroke: var(--color-rule); stroke-width: 1; }
+
+.chart-frame .series-line { fill: none; stroke-width: 2; }
+.chart-frame .series-area { opacity: 0.14; }
+
+.chart-hover-target { cursor: crosshair; }
+
+.chart-tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--color-paper-4);
+  border: 1px solid var(--color-rule);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-pop);
+  padding: var(--space-2xs) var(--space-sm);
+  font-size: var(--text-3xs);
+  color: var(--color-ink-2);
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease-out);
+  white-space: nowrap;
+  z-index: 20;
+  transform: translate(-50%, -110%);
+}
+.chart-tooltip.is-visible { opacity: 1; }
+.chart-tooltip strong { color: var(--color-ink); font-family: var(--font-mono); }
+.chart-tooltip .row { display: flex; align-items: center; gap: 6px; }
+.chart-tooltip .sw { width: 7px; height: 7px; border-radius: 2px; }
+
+.chart-crosshair { stroke: var(--color-ink-2); stroke-width: 1; stroke-dasharray: 2 3; opacity: 0; pointer-events: none; }
+.chart-crosshair.is-visible { opacity: 0.7; }
+
+.chart-point { fill: var(--color-paper-3); stroke-width: 2; opacity: 0; }
+.chart-point.is-visible { opacity: 1; }
+
+/* Donut */
+.donut-center { text-align: center; }
+.donut-center .value { font-family: var(--font-mono); font-size: var(--text-lg); font-weight: var(--weight-semibold); }
+.donut-center .label { font-size: var(--text-3xs); color: var(--color-muted); }
+
+/* Schedule / gantt chart */
+.gantt-lane { position: relative; height: 92px; background: var(--color-paper-4); border-radius: var(--radius-sm); }
+.gantt-block {
+  position: absolute;
+  top: 8px; bottom: 8px;
+  border-radius: 7px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  color: #06210a;
+  cursor: pointer;
+  transition: filter var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+}
+.gantt-block:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.gantt-block small { font-weight: var(--weight-regular); font-size: var(--text-3xs); opacity: 0.85; }
+.gantt-block.charge { background: var(--chart-2); }
+.gantt-block.discharge { background: var(--chart-5); color: #241000; }
+.gantt-block.idle { background: var(--chart-idle); color: var(--color-ink); }
+.gantt-ruler { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: var(--text-3xs); color: var(--color-muted); margin-top: 6px; }
+
+/* Sparkline */
+.sparkline { width: 100%; height: 34px; display: block; }
+
+/* One-line diagram (Sơ đồ) */
+.diagram-frame { background: var(--color-paper-4); border-radius: var(--radius-md); }
+.diagram-frame svg text { font-family: var(--font-mono); fill: var(--color-ink-2); }
+.diagram-frame .bus { stroke: var(--color-ink-2); stroke-width: 2; }
+.diagram-frame .wire { stroke: var(--color-muted); stroke-width: 1.5; fill: none; }
+.diagram-frame .node-box { fill: var(--color-paper-3); stroke: var(--color-rule); stroke-width: 1; }
+.diagram-frame .node-icon { fill: var(--color-accent-2); }
+.diagram-frame .node-label { font-size: 9.5px; fill: var(--color-ink); }
+.diagram-frame .node-sub { font-size: 8.5px; fill: var(--color-muted); }
+.diagram-frame .status-on { fill: var(--color-good); }
+.diagram-frame .status-off { fill: var(--color-muted); }
+.diagram-frame .status-alarm { fill: var(--color-critical); }
+.diagram-frame .breaker { stroke: var(--color-ink-2); stroke-width: 1.5; fill: var(--color-paper-3); }
+.diagram-frame g.dnode { cursor: pointer; }
+.diagram-frame g.dnode:hover .node-box { stroke: var(--color-accent); }
+
+/* Cell voltage grid (Tài sản) */
+.cell-grid { display: grid; grid-template-columns: repeat(16, minmax(0, 1fr)); gap: 4px; }
+.cell-chip {
+  aspect-ratio: 1;
+  border-radius: 4px;
+  background: var(--color-good);
+  display: grid; place-items: center;
+  font-family: var(--font-mono);
+  font-size: 8px;
+  color: #06210a;
+  cursor: default;
+}
+.cell-chip.warn { background: var(--color-warning); color: #241a00; }
+
+@media (max-width: 640px) {
+  .cell-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); }
+}

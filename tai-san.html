@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tài sản · HGC Cloud EMS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/charts.css">
+</head>
+<body>
+<div class="app-shell">
+  <div class="sidebar-scrim"></div>
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="white"/></svg></div>
+      <div><strong>HGC Cloud EMS</strong><span>Energy management</span></div>
+    </div>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>Dashboard</a>
+      <a href="giam-sat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l2 8 4-16 2 8h4"/></svg>Giám sát</a>
+      <a href="so-do.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 15M16 7.5 13 15"/></svg>Sơ đồ</a>
+      <a href="dieu-khien.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="7" x2="20" y2="7"/><circle cx="9" cy="7" r="2"/><line x1="4" y1="17" x2="20" y2="17"/><circle cx="16" cy="17" r="2"/></svg>Điều khiển</a>
+      <a href="ems-control-chi-tiet.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></svg>EMS Control (chi tiết)</a>
+      <a href="lich-trinh.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Lịch trình</a>
+      <a href="canh-bao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg>Cảnh báo<span class="num">8</span></a>
+      <a href="bao-cao.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h7l4 4v14H7z"/><path d="M9 12h7M9 16h7M9 8h3"/></svg>Báo cáo</a>
+      <a href="tai-san.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></svg>Tài sản</a>
+      <a href="xu-huong.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17l6-6 4 4 8-9"/><path d="M15 6h6v6"/></svg>Xu hướng</a>
+      <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .34 1.87l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.7 1.7 0 0 0-1.87-.34 1.7 1.7 0 0 0-1 1.55V21a2 2 0 1 1-4 0v-.09A1.7 1.7 0 0 0 9 19.4a1.7 1.7 0 0 0-1.87.34l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.7 1.7 0 0 0 4.6 15a1.7 1.7 0 0 0-1.55-1H3a2 2 0 1 1 0-4h.09A1.7 1.7 0 0 0 4.6 9a1.7 1.7 0 0 0-.34-1.87l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.7 1.7 0 0 0 9 4.6a1.7 1.7 0 0 0 1-1.55V3a2 2 0 1 1 4 0v.09a1.7 1.7 0 0 0 1 1.55 1.7 1.7 0 0 0 1.87-.34l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.7 1.7 0 0 0 19.4 9a1.7 1.7 0 0 0 1.55 1H21a2 2 0 1 1 0 4h-.09a1.7 1.7 0 0 0-1.55 1Z"/></svg>Cài đặt</a>
+      <a href="nguoi-dung.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.5 20c0-3.6 2.9-6 6.5-6s6.5 2.4 6.5 6"/><circle cx="17.5" cy="8.5" r="2.6"/><path d="M15.6 14.3c2.9.4 4.9 2.6 4.9 5.7"/></svg>Người dùng &amp; Phân quyền</a>
+    </nav>
+    <div class="sidebar-foot">HGC Power · v2.4.1</div>
+  </aside>
+
+  <div>
+    <header class="topbar">
+      <button class="nav-toggle" data-nav-toggle aria-label="Mở menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      <div class="topbar-title"><h1>Tài sản</h1></div>
+      <button class="plant-select"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M6 21V8l6-4 6 4v13M10 21v-6h4v6"/></svg><span>Nhà máy HGC BESS 01</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+      <span class="status-pill good"><span class="dot"></span>Online</span>
+      <div class="topbar-spacer"></div>
+      <span class="topbar-clock"><strong data-clock>10:30:00</strong></span>
+      <button class="icon-btn" aria-label="Thông báo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9a6 6 0 1 1 12 0c0 5 2 6 2 6H4s2-1 2-6Z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg><span class="badge-dot"></span></button>
+      <button class="icon-btn" aria-label="Trợ giúp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.9.5-1.5 1-1.5 2.2"/><path d="M12 17h.01"/></svg></button>
+      <div class="dropdown">
+        <button class="user-chip" data-dropdown-trigger><span class="av">A</span><span>Admin</span><svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="dropdown-menu">
+          <a href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-6 8-6s8 2 8 6"/></svg>Hồ sơ cá nhân</a>
+          <a href="cai-dat.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M4 12h2m12 0h2M12 4v2m0 12v2"/></svg>Cài đặt</a>
+          <div class="dropdown-divider"></div>
+          <button type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>Đăng xuất</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="content">
+      <div class="card">
+        <div class="card-head">
+          <div class="tabs" data-tabs="assets">
+            <button class="is-active" data-target="battery">Battery System</button>
+            <button data-target="pcs">PCS</button>
+            <button data-target="inverter">Inverter</button>
+            <button data-target="meter">Meter</button>
+            <button data-target="other">Khác</button>
+          </div>
+        </div>
+        <div class="card-body" data-panel-group="assets">
+
+          <div data-panel="battery" class="tab-panel is-active">
+            <div class="page-grid" style="grid-template-columns:260px 1fr">
+              <div style="border-right:1px solid var(--color-rule-2);padding-right:var(--space-md)">
+                <div style="font-size:var(--text-2xs);color:var(--color-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-xs)">Tổng quan</div>
+                <div class="tree">
+                  <div class="tree-node" data-toggle="c1-children"><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>Battery System</div>
+                  <div class="tree-children" id="c1-children">
+                    <div class="tree-node tree-l1" data-toggle="ct1-children"><svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>Container 01</div>
+                    <div class="tree-children" id="ct1-children">
+                      <div class="tree-node tree-l2 is-active" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 01</div>
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 02</div>
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 03</div>
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-warning)"></span>Rack 04</div>
+                    </div>
+                    <div class="tree-node tree-l1" data-toggle="ct2-children"><svg class="chev is-collapsed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>Container 02</div>
+                    <div class="tree-children is-collapsed" id="ct2-children">
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 01</div>
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 02</div>
+                    </div>
+                    <div class="tree-node tree-l1" data-toggle="ct3-children"><svg class="chev is-collapsed" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg>Container 03</div>
+                    <div class="tree-children is-collapsed" id="ct3-children">
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 01</div>
+                      <div class="tree-node tree-l2" data-select-group="rack"><span class="dot-status" style="background:var(--color-good)"></span>Rack 02</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div style="padding-left:var(--space-md)">
+                <div class="u-flex u-between" style="margin-bottom:var(--space-md)">
+                  <h2 style="font-size:var(--text-md);font-weight:600">Rack 01</h2>
+                  <span class="pill good"><span class="dot"></span>Normal</span>
+                </div>
+                <div class="mini-row" style="margin-bottom:var(--space-lg)">
+                  <div class="mini-stat"><div class="icon" style="background:oklch(70% 0.14 300 / 16%);color:oklch(78% 0.13 300)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="8" height="19" rx="2"/></svg></div><div><div class="label">SOC</div><div class="value">68%</div></div></div>
+                  <div class="mini-stat"><div class="icon" style="background:var(--color-good-wash);color:var(--color-good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/></svg></div><div><div class="label">SOH</div><div class="value">95%</div></div></div>
+                  <div class="mini-stat"><div class="icon" style="background:var(--color-accent-wash);color:var(--color-accent-2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z"/></svg></div><div><div class="label">Điện áp</div><div class="value">748.6 V</div></div></div>
+                  <div class="mini-stat"><div class="icon" style="background:var(--color-accent-wash);color:var(--color-accent-2)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16M4 12l4-4M4 12l4 4"/></svg></div><div><div class="label">Dòng điện</div><div class="value">-110.2 A</div></div></div>
+                  <div class="mini-stat"><div class="icon" style="background:var(--color-warning-wash);color:var(--color-warning)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 3"/></svg></div><div><div class="label">Nhiệt độ TB</div><div class="value">25.1°C</div></div></div>
+                  <div class="mini-stat"><div class="icon" style="background:var(--color-good-wash);color:var(--color-good)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9"/><path d="M3 5v7h7"/></svg></div><div><div class="label">Cycles</div><div class="value">320</div></div></div>
+                </div>
+
+                <h2 style="font-size:var(--text-xs);color:var(--color-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-sm)">Cell Voltage (V)</h2>
+                <div class="cell-grid" style="margin-bottom:var(--space-sm)">
+                  <div class="cell-chip">3.28</div><div class="cell-chip">3.29</div><div class="cell-chip">3.27</div><div class="cell-chip">3.28</div>
+                  <div class="cell-chip">3.29</div><div class="cell-chip">3.28</div><div class="cell-chip">3.27</div><div class="cell-chip">3.29</div>
+                  <div class="cell-chip">3.28</div><div class="cell-chip warn">3.31</div><div class="cell-chip">3.29</div><div class="cell-chip">3.28</div>
+                  <div class="cell-chip">3.27</div><div class="cell-chip">3.29</div><div class="cell-chip">3.28</div><div class="cell-chip">3.29</div>
+                </div>
+                <div class="u-flex u-between" style="font-size:var(--text-2xs);color:var(--color-muted)">
+                  <span>Min: <strong class="u-mono" style="color:var(--color-ink)">3.27 V</strong></span>
+                  <span>Avg: <strong class="u-mono" style="color:var(--color-ink)">3.28 V</strong></span>
+                  <span>Max: <strong class="u-mono" style="color:var(--color-ink)">3.31 V</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div data-panel="pcs" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Mã thiết bị</th><th>Model</th><th>Trạng thái</th><th class="num">Công suất định mức (kW)</th><th class="num">Giờ vận hành</th></tr></thead>
+                <tbody>
+                  <tr><td>PCS 01</td><td>Sungrow SC625</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">625</td><td class="num">18,240</td></tr>
+                  <tr><td>PCS 02</td><td>Sungrow SC625</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">625</td><td class="num">17,980</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div data-panel="inverter" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Mã thiết bị</th><th>Loại</th><th>Trạng thái</th><th class="num">Công suất (kW)</th></tr></thead>
+                <tbody>
+                  <tr><td>PV Inverter 01</td><td>String Inverter</td><td><span class="pill good"><span class="dot"></span>Online</span></td><td class="num">1,250</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div data-panel="meter" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Mã thiết bị</th><th>Vị trí</th><th>Trạng thái</th><th class="num">Độ chính xác</th></tr></thead>
+                <tbody>
+                  <tr><td>Meter 01</td><td>Điểm đấu nối lưới</td><td><span class="pill good"><span class="dot"></span>Online</span></td><td class="num">Class 0.5S</td></tr>
+                  <tr><td>Meter 02</td><td>Đầu ra BESS</td><td><span class="pill good"><span class="dot"></span>Online</span></td><td class="num">Class 0.5S</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div data-panel="other" class="tab-panel">
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Mã thiết bị</th><th>Loại</th><th>Trạng thái</th></tr></thead>
+                <tbody>
+                  <tr><td>HVAC 01</td><td>Làm mát container</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td></tr>
+                  <tr><td>Fire System</td><td>An toàn PCCC</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="js/app.js"></script>
+</body>
+</html>
