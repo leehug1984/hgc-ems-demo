@@ -383,7 +383,7 @@ button, input, select {
 .kpi .icon.violet { background: oklch(70% 0.14 300 / 16%); color: oklch(78% 0.13 300); }
 
 .kpi .meta { min-width: 0; }
-.kpi .label { font-size: var(--text-2xs); color: var(--color-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.kpi .label { font-size: var(--text-2xs); color: var(--color-muted); white-space: normal; line-height: 1.3; overflow-wrap: break-word; }
 .kpi .value { font-family: var(--font-mono); font-size: var(--text-xl); font-weight: var(--weight-semibold); margin-top: 2px; font-variant-numeric: tabular-nums; }
 .kpi .value small { font-family: var(--font-body); font-size: var(--text-xs); color: var(--color-ink-2); font-weight: var(--weight-regular); margin-left: 3px; }
 .kpi .trend { font-size: var(--text-3xs); margin-top: 4px; display: flex; align-items: center; gap: 3px; }
