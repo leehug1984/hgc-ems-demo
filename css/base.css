@@ -88,10 +88,10 @@ button, input, select {
   white-space: nowrap;
 }
 
-.sidebar-brand strong .brand-a { color: var(--color-brand-green); }
-.sidebar-brand strong .brand-b { color: var(--color-brand-red); }
+.sidebar-brand strong .brand-a { color: var(--color-brand-green); display: inline; }
+.sidebar-brand strong .brand-b { color: var(--color-brand-red); display: inline; }
 
-.sidebar-brand span {
+.sidebar-brand strong + span {
   display: block;
   font-size: var(--text-3xs);
   color: var(--color-muted);
