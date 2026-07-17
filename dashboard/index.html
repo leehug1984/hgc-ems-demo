@@ -128,17 +128,17 @@
             <div class="card-body" style="flex:1;display:flex;flex-direction:column;justify-content:center">
               <div class="diagram-frame chart-frame" style="background:none">
                 <svg viewBox="0 0 460 432">
-                  <!-- flow lines — orthogonal; direction now carried by the traveling light dot only. Canvas scaled 1.6x tall for a bigger diagram -->
+                  <!-- flow lines — orthogonal; green = inbound (PV, Lưới điện), red = outbound (BESS charging, Tải). Direction also carried by the traveling light dot -->
                   <path class="wire" d="M118 93 L200 93 L200 192" style="stroke:var(--color-good)"/>
-                  <path class="wire" d="M200 192 L200 291 L118 291" style="stroke:var(--color-good)"/>
-                  <path class="wire" d="M342 93 L260 93 L260 192" style="stroke:var(--chart-5)"/>
-                  <path class="wire" d="M260 192 L260 291 L342 291" style="stroke:var(--chart-5)"/>
+                  <path class="wire" d="M200 192 L200 291 L118 291" style="stroke:var(--color-critical)"/>
+                  <path class="wire" d="M342 93 L260 93 L260 192" style="stroke:var(--color-good)"/>
+                  <path class="wire" d="M260 192 L260 291 L342 291" style="stroke:var(--color-critical)"/>
 
                   <!-- traveling light per connector — speed scaled to each flow's magnitude (1.25/1.20/0.65/2.85 MW) -->
                   <circle class="flow-dot green" r="5.5" style="offset-path:path('M118 93 L200 93 L200 192');animation-duration:3.8s"/>
-                  <circle class="flow-dot green" r="5.5" style="offset-path:path('M200 192 L200 291 L118 291');animation-duration:4s"/>
-                  <circle class="flow-dot orange" r="5.5" style="offset-path:path('M342 93 L260 93 L260 192');animation-duration:6.4s"/>
-                  <circle class="flow-dot orange" r="5.5" style="offset-path:path('M260 192 L260 291 L342 291');animation-duration:2.6s"/>
+                  <circle class="flow-dot red" r="5.5" style="offset-path:path('M200 192 L200 291 L118 291');animation-duration:4s"/>
+                  <circle class="flow-dot green" r="5.5" style="offset-path:path('M342 93 L260 93 L260 192');animation-duration:6.4s"/>
+                  <circle class="flow-dot red" r="5.5" style="offset-path:path('M260 192 L260 291 L342 291');animation-duration:2.6s"/>
 
                   <!-- AC bus -->
                   <line x1="200" y1="192" x2="260" y2="192" style="stroke:var(--color-accent);stroke-width:5"/>
@@ -158,10 +158,10 @@
                     <text class="node-sub" x="75" y="168" text-anchor="middle" style="font-size:19px">1.25 MW</text>
                   </g>
 
-                  <!-- BESS — charging, draws from the bus -->
+                  <!-- BESS — charging, draws from the bus (outbound) -->
                   <g class="dnode">
-                    <circle cx="75" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:3"/>
-                    <g transform="translate(75,291) scale(1.6)" style="color:var(--color-good)">
+                    <circle cx="75" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--color-critical);stroke-width:3"/>
+                    <g transform="translate(75,291) scale(1.6)" style="color:var(--color-critical)">
                       <rect x="-6" y="-14" width="12" height="26" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <rect x="-3" y="-18" width="6" height="4" fill="currentColor" stroke="none"/>
                     </g>
@@ -171,10 +171,10 @@
                     <text class="node-sub" x="75" y="398" text-anchor="middle" style="fill:var(--color-good);font-size:19px">68%</text>
                   </g>
 
-                  <!-- Lưới điện / Grid — importing into the bus -->
+                  <!-- Lưới điện / Grid — importing into the bus (inbound) -->
                   <g class="dnode">
-                    <circle cx="385" cy="93" r="43" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:3"/>
-                    <g transform="translate(385,93) scale(1.6)" style="color:var(--chart-5)">
+                    <circle cx="385" cy="93" r="43" style="fill:var(--color-paper-4);stroke:var(--color-good);stroke-width:3"/>
+                    <g transform="translate(385,93) scale(1.6)" style="color:var(--color-good)">
                       <path d="M0 -16 -9 16 M0 -16 9 16 M-5.5 -4 H5.5 M-7 3 H7 M-8.5 10 H8.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/>
                     </g>
                     <circle class="status-on" cx="420" cy="59" r="5.5"/>
@@ -183,10 +183,10 @@
                     <text class="node-sub" x="385" y="194" text-anchor="middle" style="fill:var(--color-good);font-size:19px">Nhập</text>
                   </g>
 
-                  <!-- Tải / Load — consuming from the bus -->
+                  <!-- Tải / Load — consuming from the bus (outbound) -->
                   <g class="dnode">
-                    <circle cx="385" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--chart-5);stroke-width:3"/>
-                    <g transform="translate(385,291) scale(1.6)" style="color:var(--chart-5)">
+                    <circle cx="385" cy="291" r="43" style="fill:var(--color-paper-4);stroke:var(--color-critical);stroke-width:3"/>
+                    <g transform="translate(385,291) scale(1.6)" style="color:var(--color-critical)">
                       <path d="M-9 14V-3l9-7 9 7v17" fill="none" stroke="currentColor" stroke-width="1.8"/>
                       <path d="M-4 14V6h8v8" fill="none" stroke="currentColor" stroke-width="1.8"/>
                     </g>

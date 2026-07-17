@@ -129,11 +129,11 @@
                             <table class="data-table">
                               <thead><tr><th>Thông số</th><th class="num">Giá trị</th><th></th></tr></thead>
                               <tbody>
-                                <tr><td>P Ramp Rate (kW/s)</td><td class="num">100</td><td><button class="btn btn-outline">Đặt</button></td></tr>
-                                <tr><td>Q Ramp Rate (kVAr/s)</td><td class="num">50</td><td><button class="btn btn-outline">Đặt</button></td></tr>
-                                <tr><td>SOC Min (%)</td><td class="num">20</td><td><button class="btn btn-outline">Đặt</button></td></tr>
-                                <tr><td>SOC Max (%)</td><td class="num">90</td><td><button class="btn btn-outline">Đặt</button></td></tr>
-                                <tr><td>Grid Power Limit (kW)</td><td class="num">2,000</td><td><button class="btn btn-outline">Đặt</button></td></tr>
+                                <tr><td>P Ramp Rate (kW/s)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="100"></td><td><button class="btn btn-outline">Đặt</button></td></tr>
+                                <tr><td>Q Ramp Rate (kVAr/s)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="50"></td><td><button class="btn btn-outline">Đặt</button></td></tr>
+                                <tr><td>SOC Min (%)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="20"></td><td><button class="btn btn-outline">Đặt</button></td></tr>
+                                <tr><td>SOC Max (%)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="90"></td><td><button class="btn btn-outline">Đặt</button></td></tr>
+                                <tr><td>Grid Power Limit (kW)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="2000"></td><td><button class="btn btn-outline">Đặt</button></td></tr>
                               </tbody>
                             </table>
                           </div>
@@ -157,13 +157,14 @@
                       <table class="data-table">
                         <thead><tr><th>Giới hạn</th><th class="num">Tối thiểu</th><th class="num">Tối đa</th></tr></thead>
                         <tbody>
-                          <tr><td>SOC (%)</td><td class="num">20</td><td class="num">90</td></tr>
-                          <tr><td>Điện áp DC (V)</td><td class="num">680</td><td class="num">780</td></tr>
-                          <tr><td>Nhiệt độ Cell (°C)</td><td class="num">10</td><td class="num">45</td></tr>
-                          <tr><td>Công suất tác dụng (MW)</td><td class="num">-1.25</td><td class="num">1.25</td></tr>
+                          <tr><td>SOC (%)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="20"></td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="90"></td></tr>
+                          <tr><td>Điện áp DC (V)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="680"></td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="780"></td></tr>
+                          <tr><td>Nhiệt độ Cell (°C)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="10"></td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="45"></td></tr>
+                          <tr><td>Công suất tác dụng (MW)</td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="-1.25"></td><td class="num"><input class="input u-mono" style="width:90px;text-align:right" value="1.25"></td></tr>
                         </tbody>
                       </table>
                     </div>
+                    <button class="btn btn-primary" style="margin-top:var(--space-md)" data-demo-loading>Lưu giới hạn</button>
                   </div>
 
                   <div data-panel="advanced" class="tab-panel">
@@ -212,12 +213,16 @@
           <div data-panel="bess" class="tab-panel">
             <div class="table-wrap">
               <table class="data-table">
-                <thead><tr><th>Rack</th><th class="num">SOC (%)</th><th>Chế độ cân bằng</th><th>Trạng thái</th><th>Bật/Tắt</th></tr></thead>
+                <thead><tr><th>Container</th><th>Rack</th><th class="num">SOC (%)</th><th>Chế độ cân bằng</th><th>Trạng thái</th><th>Bật/Tắt</th></tr></thead>
                 <tbody>
-                  <tr><td>Rack 01</td><td class="num">68</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
-                  <tr><td>Rack 02</td><td class="num">66</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
-                  <tr><td>Rack 03</td><td class="num">70</td><td>Auto</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
-                  <tr><td>Rack 04</td><td class="num">65</td><td>Manual</td><td><span class="pill warning"><span class="dot"></span>SOC thấp</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 01</td><td>Rack 01</td><td class="num">68</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 01</td><td>Rack 02</td><td class="num">66</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 01</td><td>Rack 03</td><td class="num">70</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 01</td><td>Rack 04</td><td class="num">65</td><td><select class="select"><option>Auto</option><option selected>Manual</option></select></td><td><span class="pill warning"><span class="dot"></span>SOC thấp</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 02</td><td>Rack 01</td><td class="num">69</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 02</td><td>Rack 02</td><td class="num">67</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 03</td><td>Rack 01</td><td class="num">68</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
+                  <tr><td>Container 03</td><td>Rack 02</td><td class="num">69</td><td><select class="select"><option>Auto</option><option>Manual</option></select></td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td><label class="switch"><input type="checkbox" checked><span class="track"></span><span class="thumb"></span></label></td></tr>
                 </tbody>
               </table>
             </div>

@@ -23,6 +23,7 @@
 }
 .flow-dot.green { fill: var(--color-good); filter: drop-shadow(0 0 3px var(--color-good)); }
 .flow-dot.orange { fill: var(--chart-5); filter: drop-shadow(0 0 3px var(--chart-5)); }
+.flow-dot.red { fill: var(--color-critical); filter: drop-shadow(0 0 3px var(--color-critical)); }
 
 @media (prefers-reduced-motion: reduce) {
   .flow-dot { animation: none; offset-distance: 50%; }

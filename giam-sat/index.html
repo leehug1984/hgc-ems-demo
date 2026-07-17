@@ -101,9 +101,10 @@
                   <thead><tr><th>Thiết bị</th><th>Trạng thái</th><th class="num">Công suất (kW)</th><th class="num">Điện áp (V)</th><th class="num">Dòng điện (A)</th><th class="num">Nhiệt độ (°C)</th></tr></thead>
                   <tbody>
                     <tr><td>PCS 01</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">625</td><td class="num">748.6</td><td class="num">128.3</td><td class="num">27.6</td></tr>
-                    <tr><td>PCS 02</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">600</td><td class="num">749.2</td><td class="num">120.1</td><td class="num">28.1</td></tr>
-                    <tr><td>Battery Rack 01</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-312</td><td class="num">716.4</td><td class="num">-110.2</td><td class="num">25.2</td></tr>
-                    <tr><td>Battery Rack 02</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-298</td><td class="num">715.8</td><td class="num">-105.8</td><td class="num">25.0</td></tr>
+                    <tr><td>PCS 02</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">600</td><td class="num">749.2</td><td class="num">120.1</td><td class="num">28.1</td></tr>
+                    <tr><td>Battery System · Container 01 (4 rack)</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">-590</td><td class="num">747.5</td><td class="num">-393.4</td><td class="num">25.4</td></tr>
+                    <tr><td>Battery System · Container 02 (2 rack)</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-302</td><td class="num">747.2</td><td class="num">-217.3</td><td class="num">25.1</td></tr>
+                    <tr><td>Battery System · Container 03 (2 rack)</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-297</td><td class="num">747.6</td><td class="num">-213.5</td><td class="num">25.1</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -118,12 +119,16 @@
               </div>
               <div class="table-wrap">
                 <table class="data-table">
-                  <thead><tr><th>Rack</th><th class="num">SOC (%)</th><th class="num">SOH (%)</th><th class="num">Điện áp (V)</th><th class="num">Dòng điện (A)</th><th>Trạng thái</th></tr></thead>
+                  <thead><tr><th>Container</th><th>Rack</th><th class="num">SOC (%)</th><th class="num">SOH (%)</th><th class="num">Điện áp (V)</th><th class="num">Dòng điện (A)</th><th>Trạng thái</th></tr></thead>
                   <tbody>
-                    <tr><td>Rack 01</td><td class="num">68</td><td class="num">95</td><td class="num">748.6</td><td class="num">-110.2</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
-                    <tr><td>Rack 02</td><td class="num">66</td><td class="num">94</td><td class="num">746.1</td><td class="num">-108.4</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
-                    <tr><td>Rack 03</td><td class="num">70</td><td class="num">96</td><td class="num">749.0</td><td class="num">-111.0</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
-                    <tr><td>Rack 04</td><td class="num">65</td><td class="num">92</td><td class="num">744.8</td><td class="num">-104.6</td><td><span class="pill warning"><span class="dot"></span>SOC thấp</span></td></tr>
+                    <tr><td>Container 01</td><td>Rack 01</td><td class="num">68</td><td class="num">95</td><td class="num">748.6</td><td class="num">-110.2</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 01</td><td>Rack 02</td><td class="num">66</td><td class="num">94</td><td class="num">746.1</td><td class="num">-108.4</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 01</td><td>Rack 03</td><td class="num">70</td><td class="num">96</td><td class="num">749.0</td><td class="num">-111.0</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 01</td><td>Rack 04</td><td class="num">65</td><td class="num">92</td><td class="num">744.8</td><td class="num">-104.6</td><td><span class="pill warning"><span class="dot"></span>SOC thấp</span></td></tr>
+                    <tr><td>Container 02</td><td>Rack 01</td><td class="num">69</td><td class="num">95</td><td class="num">747.9</td><td class="num">-107.5</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 02</td><td>Rack 02</td><td class="num">67</td><td class="num">94</td><td class="num">746.5</td><td class="num">-109.8</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 03</td><td>Rack 01</td><td class="num">68</td><td class="num">95</td><td class="num">748.0</td><td class="num">-108.0</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
+                    <tr><td>Container 03</td><td>Rack 02</td><td class="num">69</td><td class="num">96</td><td class="num">747.2</td><td class="num">-105.5</td><td><span class="pill good"><span class="dot"></span>Normal</span></td></tr>
                   </tbody>
                 </table>
               </div>
@@ -155,9 +160,15 @@
                   <thead><tr><th>Thiết bị</th><th>Loại</th><th>Trạng thái</th><th class="num">Công suất (kW)</th><th class="num">Nhiệt độ (°C)</th></tr></thead>
                   <tbody>
                     <tr><td>PCS 01</td><td>Inverter</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">625</td><td class="num">27.6</td></tr>
-                    <tr><td>PCS 02</td><td>Inverter</td><td><span class="pill good"><span class="dot"></span>Running</span></td><td class="num">600</td><td class="num">28.1</td></tr>
-                    <tr><td>Battery Rack 01</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-312</td><td class="num">25.2</td></tr>
-                    <tr><td>Battery Rack 02</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-298</td><td class="num">25.0</td></tr>
+                    <tr><td>PCS 02</td><td>Inverter</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">600</td><td class="num">28.1</td></tr>
+                    <tr><td>Container 01 · Rack 01</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-152</td><td class="num">25.2</td></tr>
+                    <tr><td>Container 01 · Rack 02</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-148</td><td class="num">25.0</td></tr>
+                    <tr><td>Container 01 · Rack 03</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-151</td><td class="num">25.1</td></tr>
+                    <tr><td>Container 01 · Rack 04</td><td>BESS</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">-139</td><td class="num">26.4</td></tr>
+                    <tr><td>Container 02 · Rack 01</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-149</td><td class="num">25.1</td></tr>
+                    <tr><td>Container 02 · Rack 02</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-153</td><td class="num">24.7</td></tr>
+                    <tr><td>Container 03 · Rack 01</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-150</td><td class="num">25.0</td></tr>
+                    <tr><td>Container 03 · Rack 02</td><td>BESS</td><td><span class="pill neutral"><span class="dot"></span>Normal</span></td><td class="num">-147</td><td class="num">25.2</td></tr>
                     <tr><td>Meter 01</td><td>Đo đếm</td><td><span class="pill good"><span class="dot"></span>Online</span></td><td class="num">—</td><td class="num">—</td></tr>
                     <tr><td>HVAC 01</td><td>Làm mát</td><td><span class="pill warning"><span class="dot"></span>Cảnh báo</span></td><td class="num">—</td><td class="num">31.4</td></tr>
                     <tr><td>Fire System</td><td>An toàn</td><td><span class="pill good"><span class="dot"></span>Normal</span></td><td class="num">—</td><td class="num">—</td></tr>
