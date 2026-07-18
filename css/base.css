@@ -91,6 +91,14 @@ button, input, select {
 .sidebar-brand strong .brand-a { color: var(--color-brand-green); display: inline; }
 .sidebar-brand strong .brand-b { color: var(--color-brand-red); display: inline; }
 
+.brand-logo {
+  height: 16px;
+  width: auto;
+  vertical-align: -3px;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+
 .sidebar-brand strong + span {
   display: block;
   font-size: var(--text-3xs);
