@@ -106,14 +106,14 @@
           <div class="mini-stat warn"><div class="icon" style="background:var(--color-critical-wash);color:var(--color-critical)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></div><div><div class="label">Cảnh báo đang hoạt động</div><div class="value">8</div></div></div>
         </div>
 
-        <div class="page-grid" style="grid-template-columns: 1fr 1fr;">
+        <div class="page-grid" style="grid-template-columns: 2fr 1fr;">
           <section class="card">
             <div class="card-head">
               <h2>Sơ đồ một sợi</h2>
             </div>
             <div class="card-body">
               <div class="diagram-frame chart-frame" style="padding:var(--space-sm)">
-                <svg viewBox="0 0 900 615" style="height:210px;width:auto;display:block;margin:0 auto">
+                <svg viewBox="0 0 900 615" style="height:420px;width:auto;display:block;margin:0 auto">
                   <text x="450" y="18" text-anchor="middle" class="node-sub" style="font-size:22px">110kV Grid</text>
                   <circle cx="450" cy="40" r="13" class="node-box"/>
                   <g transform="translate(450,40)" style="color:var(--color-accent-2)">
@@ -343,53 +343,28 @@
 
         <section class="card">
           <div class="card-head">
-            <h2>Xu hướng công suất</h2>
+            <h2>Chế độ điều khiển</h2>
             <div class="card-head-spacer"></div>
-            <div class="legend" style="font-size:18px">
-              <span class="item"><span class="swatch line" style="background:var(--chart-1)"></span>Công suất tải (MW)</span>
-              <span class="item"><span class="swatch line" style="background:var(--chart-3)"></span>PV (MW)</span>
-              <span class="item"><span class="swatch line" style="background:var(--chart-4)"></span>Tải (MW)</span>
-            </div>
+            <a href="../dieu-khien/" style="font-size:var(--text-2xs);color:var(--color-accent-2);font-weight:500">Đi tới Điều khiển →</a>
           </div>
           <div class="card-body">
-            <div class="chart-frame" data-hover>
-              <svg viewBox="0 0 600 500" preserveAspectRatio="none" style="width:100%;height:230px">
-                <!-- Y-axis rescaled to 0-5 MW so it can show the balanced headline figure (AC BUS = PV + Lưới nhập = BESS sạc + Tải = 4.05 MW) -->
-                <line class="grid-line" x1="40" y1="32" x2="580" y2="32"/>
-                <line class="grid-line" x1="40" y1="112" x2="580" y2="112"/>
-                <line class="grid-line" x1="40" y1="192" x2="580" y2="192"/>
-                <line class="grid-line" x1="40" y1="272" x2="580" y2="272"/>
-                <line class="grid-line" x1="40" y1="352" x2="580" y2="352"/>
-                <line class="grid-line" x1="40" y1="432" x2="580" y2="432"/>
-                <line class="baseline" x1="40" y1="464" x2="580" y2="464"/>
-                <text class="axis-label" x="4" y="36" style="font-size:16.5px">5.0</text>
-                <text class="axis-label" x="4" y="116" style="font-size:16.5px">4.0</text>
-                <text class="axis-label" x="4" y="196" style="font-size:16.5px">3.0</text>
-                <text class="axis-label" x="4" y="276" style="font-size:16.5px">2.0</text>
-                <text class="axis-label" x="4" y="356" style="font-size:16.5px">1.0</text>
-                <text class="axis-label" x="4" y="436" style="font-size:16.5px">0</text>
-
-                <polyline class="series-line" stroke="var(--chart-1)" points="40,288 130,272 220,224 310,144 400,108 490,192 580,272" style="stroke-width:2.5"/>
-                <polyline class="series-line" stroke="var(--chart-3)" points="40,432 130,432 220,360 310,304 400,332 490,424 580,432" style="stroke-width:2.5"/>
-                <polyline class="series-line" stroke="var(--chart-4)" points="40,272 130,280 220,248 310,224 400,204 490,232 580,264" style="stroke-width:2.5"/>
-
-                <line class="chart-crosshair" x1="40" y1="16" x2="40" y2="464"/>
-                <g>
-                  <circle class="chart-point" cx="40" cy="288" r="5.5" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"Công suất tải","value":"1.8 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.0 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="130" cy="272" r="5.5" stroke="var(--chart-1)" data-label="04:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"1.9 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="220" cy="224" r="5.5" stroke="var(--chart-1)" data-label="08:00" data-rows='[{"name":"Công suất tải","value":"2.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.3 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="310" cy="144" r="5.5" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"Công suất tải","value":"3.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.6 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.6 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="400" cy="108" r="5.5" stroke="var(--chart-1)" data-label="16:00" data-rows='[{"name":"Công suất tải","value":"4.05 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.25 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.85 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="490" cy="192" r="5.5" stroke="var(--chart-1)" data-label="20:00" data-rows='[{"name":"Công suất tải","value":"3.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.1 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.5 MW","color":"var(--chart-4)"}]'/>
-                  <circle class="chart-point" cx="580" cy="272" r="5.5" stroke="var(--chart-1)" data-label="24:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.1 MW","color":"var(--chart-4)"}]'/>
-                </g>
-                <text class="axis-label" x="30" y="493" style="font-size:16.5px">00:00</text>
-                <text class="axis-label" x="215" y="493" style="font-size:16.5px">08:00</text>
-                <text class="axis-label" x="390" y="493" style="font-size:16.5px">16:00</text>
-                <text class="axis-label" x="562" y="493" style="font-size:16.5px">24:00</text>
-                <rect class="chart-hover-target" x="40" y="16" width="540" height="448" fill="transparent"/>
-              </svg>
-              <div class="chart-tooltip"></div>
+            <div class="page-grid" style="grid-template-columns:1fr 1fr;gap:var(--space-lg)">
+              <div>
+                <div style="font-size:var(--text-2xs);color:var(--color-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-sm)">Chế độ đang chạy</div>
+                <div class="u-flex u-between" style="padding:12px 14px;border-radius:var(--radius-sm);background:var(--color-accent-wash);border:1px solid var(--color-accent);margin-bottom:10px">
+                  <span style="font-weight:600">Peak Shaving</span>
+                  <span class="pill good"><span class="dot"></span>Đang chạy</span>
+                </div>
+                <div style="font-size:var(--text-2xs);color:var(--color-muted)">Chế độ khác (không hoạt động): Load Shifting, Time of Use</div>
+              </div>
+              <div>
+                <div style="font-size:var(--text-2xs);color:var(--color-muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:var(--space-sm)">Tính năng bổ sung</div>
+                <div class="page-grid" style="gap:8px">
+                  <div class="u-flex u-between"><span style="font-size:var(--text-xs)">Frequency Support</span><span class="pill good"><span class="dot"></span>Bật</span></div>
+                  <div class="u-flex u-between"><span style="font-size:var(--text-xs)">Reactive Power Control</span><span class="pill neutral"><span class="dot"></span>Tắt</span></div>
+                  <div class="u-flex u-between"><span style="font-size:var(--text-xs)">Volt-Var Control</span><span class="pill neutral"><span class="dot"></span>Tắt</span></div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
