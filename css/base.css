@@ -92,10 +92,10 @@ button, input, select {
 .sidebar-brand strong .brand-b { color: var(--color-brand-red); display: inline; }
 
 .brand-logo {
-  height: 16px;
+  height: 22px;
   width: auto;
-  vertical-align: -3px;
-  margin-right: 5px;
+  vertical-align: -6px;
+  margin-right: 8px;
   border-radius: 2px;
 }
 
