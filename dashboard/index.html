@@ -106,274 +106,211 @@
           <div class="mini-stat warn"><div class="icon" style="background:var(--color-critical-wash);color:var(--color-critical)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 20h20L12 3Z"/><path d="M12 9v5M12 17h.01"/></svg></div><div><div class="label">Cảnh báo đang hoạt động</div><div class="value">8</div></div></div>
         </div>
 
-        <section class="card" style="max-width:700px;margin:0 auto">
-          <div class="card-head">
-            <h2>Sơ đồ một sợi</h2>
-            <div class="card-head-spacer"></div>
-            <button class="btn btn-ghost">Tùy chọn</button>
-          </div>
-          <div class="card-body">
-            <div class="diagram-frame chart-frame" style="position:relative;padding:var(--space-md)">
-              <svg viewBox="0 0 900 615">
-                <text x="450" y="18" text-anchor="middle" class="node-sub" style="font-size:11px">110kV Grid</text>
-                <circle cx="450" cy="40" r="13" class="node-box"/>
-                <g transform="translate(450,40)" style="color:var(--color-accent-2)">
-                  <path d="M0 -7 -4.5 7 M0 -7 4.5 7 M-2.7 -1.3 H2.7 M-3.3 3.3 H3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
-                </g>
-
-                <line class="wire" x1="450" y1="53" x2="450" y2="76"/>
-                <circle cx="440" cy="92" r="15" class="node-box"/>
-                <circle cx="460" cy="92" r="15" class="node-box"/>
-                <text x="480" y="88" class="node-sub">Trạm sạc điện</text>
-                <text x="480" y="100" class="node-sub">110/22kV · 40 MVA</text>
-                <line class="wire" x1="450" y1="107" x2="450" y2="160"/>
-
-                <line class="bus" x1="120" y1="160" x2="820" y2="160"/>
-                <text x="120" y="146" class="node-sub" style="font-size:11px;fill:var(--color-ink-2)">22kV Busbar</text>
-
-                <!-- PV Inverter branch -->
-                <line class="wire" x1="180" y1="160" x2="180" y2="196"/>
-                <rect x="173" y="196" width="14" height="14" class="breaker" />
-                <line class="wire" x1="180" y1="210" x2="180" y2="250"/>
-                <g class="dnode"><rect class="node-box" x="115" y="250" width="130" height="60" rx="8"/>
-                  <circle class="status-on" cx="130" cy="264" r="4"/>
-                  <g transform="translate(143,280)" style="color:var(--color-warning)">
-                    <circle r="4.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <path d="M0 -9v2M0 7v2M-9 0h2M7 0h2M-6.4 -6.4l1.4 1.4M5 5l1.4 1.4M-6.4 6.4l1.4-1.4M5 -5l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+        <div class="page-grid" style="grid-template-columns: 1fr 1fr;">
+          <section class="card">
+            <div class="card-head">
+              <h2>Sơ đồ một sợi</h2>
+            </div>
+            <div class="card-body">
+              <div class="diagram-frame chart-frame" style="padding:var(--space-sm)">
+                <svg viewBox="0 0 900 615" style="height:210px;width:auto;display:block;margin:0 auto">
+                  <text x="450" y="18" text-anchor="middle" class="node-sub" style="font-size:22px">110kV Grid</text>
+                  <circle cx="450" cy="40" r="13" class="node-box"/>
+                  <g transform="translate(450,40)" style="color:var(--color-accent-2)">
+                    <path d="M0 -7 -4.5 7 M0 -7 4.5 7 M-2.7 -1.3 H2.7 M-3.3 3.3 H3.3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
                   </g>
-                  <text class="node-label" x="167" y="269">PV Inverter</text>
-                  <text class="node-sub" x="167" y="285">1.25 MW</text>
-                  <text class="node-sub" x="167" y="299" style="fill:var(--color-good)">Đóng</text>
-                </g>
 
-                <!-- PCS 1 branch -->
-                <line class="wire" x1="370" y1="160" x2="370" y2="196"/>
-                <rect x="363" y="196" width="14" height="14" class="breaker" />
-                <line class="wire" x1="370" y1="210" x2="370" y2="250"/>
-                <g class="dnode"><rect class="node-box" x="305" y="250" width="130" height="60" rx="8"/>
-                  <circle class="status-on" cx="320" cy="264" r="4"/>
-                  <g transform="translate(333,280)" style="color:var(--color-accent-2)">
-                    <rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <path d="M-4.5 0 Q-2.2 -4.5 0 0 Q2.2 4.5 4.5 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  <line class="wire" x1="450" y1="53" x2="450" y2="76"/>
+                  <circle cx="440" cy="92" r="15" class="node-box"/>
+                  <circle cx="460" cy="92" r="15" class="node-box"/>
+                  <text x="480" y="86" class="node-sub" style="font-size:17px">Trạm sạc điện</text>
+                  <text x="480" y="106" class="node-sub" style="font-size:17px">110/22kV · 40 MVA</text>
+                  <line class="wire" x1="450" y1="107" x2="450" y2="160"/>
+
+                  <line class="bus" x1="120" y1="160" x2="820" y2="160"/>
+                  <text x="120" y="146" class="node-sub" style="font-size:22px;fill:var(--color-ink-2)">22kV Busbar</text>
+
+                  <!-- PV Inverter branch -->
+                  <line class="wire" x1="180" y1="160" x2="180" y2="196"/>
+                  <rect x="173" y="196" width="14" height="14" class="breaker" />
+                  <line class="wire" x1="180" y1="210" x2="180" y2="250"/>
+                  <g class="dnode"><rect class="node-box" x="115" y="250" width="130" height="60" rx="8"/>
+                    <circle class="status-on" cx="130" cy="264" r="4"/>
+                    <g transform="translate(143,280)" style="color:var(--color-warning)">
+                      <circle r="4.5" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <path d="M0 -9v2M0 7v2M-9 0h2M7 0h2M-6.4 -6.4l1.4 1.4M5 5l1.4 1.4M-6.4 6.4l1.4-1.4M5 -5l1.4-1.4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" fill="none"/>
+                    </g>
+                    <text class="node-label" x="167" y="269" style="font-size:19px">PV Inverter</text>
+                    <text class="node-sub" x="167" y="285" style="font-size:17px">1.25 MW</text>
+                    <text class="node-sub" x="167" y="299" style="fill:var(--color-good);font-size:17px">Đóng</text>
                   </g>
-                  <text class="node-label" x="357" y="269">PCS 1</text>
-                  <text class="node-sub" x="357" y="285">1.25 MW</text>
-                  <text class="node-sub" x="357" y="299" style="fill:var(--color-good)">Đóng</text>
-                </g>
 
-                <!-- PCS 2 branch (breaker in warning) -->
-                <line class="wire" x1="560" y1="160" x2="560" y2="196"/>
-                <rect x="553" y="196" width="14" height="14" class="breaker" style="fill:var(--color-warning-wash);stroke:var(--color-warning)"/>
-                <line class="wire" x1="560" y1="210" x2="560" y2="250"/>
-                <g class="dnode"><rect class="node-box" x="495" y="250" width="130" height="60" rx="8" style="stroke:var(--color-warning)"/>
-                  <circle class="status-alarm" cx="510" cy="264" r="4"/>
-                  <g transform="translate(523,280)" style="color:var(--color-warning)">
-                    <rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <path d="M-4.5 0 Q-2.2 -4.5 0 0 Q2.2 4.5 4.5 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                  <!-- PCS 1 branch -->
+                  <line class="wire" x1="370" y1="160" x2="370" y2="196"/>
+                  <rect x="363" y="196" width="14" height="14" class="breaker" />
+                  <line class="wire" x1="370" y1="210" x2="370" y2="250"/>
+                  <g class="dnode"><rect class="node-box" x="305" y="250" width="130" height="60" rx="8"/>
+                    <circle class="status-on" cx="320" cy="264" r="4"/>
+                    <g transform="translate(333,280)" style="color:var(--color-accent-2)">
+                      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <path d="M-4.5 0 Q-2.2 -4.5 0 0 Q2.2 4.5 4.5 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    </g>
+                    <text class="node-label" x="357" y="269" style="font-size:19px">PCS 1</text>
+                    <text class="node-sub" x="357" y="285" style="font-size:17px">1.25 MW</text>
+                    <text class="node-sub" x="357" y="299" style="fill:var(--color-good);font-size:17px">Đóng</text>
                   </g>
-                  <text class="node-label" x="547" y="269">PCS 2</text>
-                  <text class="node-sub" x="547" y="285">1.25 MW</text>
-                  <text class="node-sub" x="547" y="299" style="fill:var(--color-warning)">Cảnh báo</text>
-                </g>
 
-                <!-- Tải nhà máy branch -->
-                <line class="wire" x1="770" y1="160" x2="770" y2="196"/>
-                <rect x="763" y="196" width="14" height="14" class="breaker" />
-                <line class="wire" x1="770" y1="210" x2="770" y2="250"/>
-                <g class="dnode"><rect class="node-box" x="705" y="250" width="130" height="60" rx="8"/>
-                  <circle class="status-on" cx="720" cy="264" r="4"/>
-                  <g transform="translate(733,280)" style="color:oklch(78% 0.13 300)">
-                    <path d="M-6 6V-1.5l6-4.5 6 4.5V6" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <path d="M-2.3 6V2.7h4.6V6" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <!-- PCS 2 branch (breaker in warning) -->
+                  <line class="wire" x1="560" y1="160" x2="560" y2="196"/>
+                  <rect x="553" y="196" width="14" height="14" class="breaker" style="fill:var(--color-warning-wash);stroke:var(--color-warning)"/>
+                  <line class="wire" x1="560" y1="210" x2="560" y2="250"/>
+                  <g class="dnode"><rect class="node-box" x="495" y="250" width="130" height="60" rx="8" style="stroke:var(--color-warning)"/>
+                    <circle class="status-alarm" cx="510" cy="264" r="4"/>
+                    <g transform="translate(523,280)" style="color:var(--color-warning)">
+                      <rect x="-8" y="-8" width="16" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <path d="M-4.5 0 Q-2.2 -4.5 0 0 Q2.2 4.5 4.5 0" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                    </g>
+                    <text class="node-label" x="547" y="269" style="font-size:19px">PCS 2</text>
+                    <text class="node-sub" x="547" y="285" style="font-size:17px">1.25 MW</text>
+                    <text class="node-sub" x="547" y="299" style="fill:var(--color-warning);font-size:17px">Cảnh báo</text>
                   </g>
-                  <text class="node-label" x="757" y="269">Tải nhà máy</text>
-                  <text class="node-sub" x="757" y="285">2.85 MW</text>
-                  <text class="node-sub" x="757" y="299" style="fill:var(--color-good)">Đóng</text>
-                </g>
 
-                <!-- Battery System — PCS1/PCS2 merge into a DC combiner bus, then fan out into 3 containers, each holding its own rack count (synced with Tài sản) -->
-                <line class="wire" x1="370" y1="310" x2="370" y2="330"/>
-                <line class="wire" x1="560" y1="310" x2="560" y2="330"/>
-                <line class="bus" x1="370" y1="330" x2="560" y2="330"/>
-                <text x="465" y="320" text-anchor="middle" class="node-sub" style="font-size:9px">DC Combiner</text>
-                <line class="wire" x1="465" y1="330" x2="465" y2="427"/>
-
-                <!-- Battery System — a labeled enclosure grouping the 3 containers AND their racks (no standalone icon/node; the frame itself is the system boundary) -->
-                <rect x="5" y="405" width="840" height="195" rx="10" style="fill:none;stroke:var(--color-accent);stroke-width:1.5;stroke-dasharray:6 4"/>
-                <text x="22" y="421" class="node-label" style="font-weight:600;fill:var(--color-accent);font-size:11px">Battery System · 5.02 MWh · SOC 68%</text>
-
-                <line class="bus" x1="150" y1="427" x2="760" y2="427"/>
-                <line class="wire" x1="150" y1="427" x2="150" y2="447"/>
-                <line class="wire" x1="465" y1="427" x2="465" y2="447"/>
-                <line class="wire" x1="760" y1="427" x2="760" y2="447"/>
-
-                <!-- Container 01 — 4 racks (Rack 04 in cảnh báo, matching Tài sản); icon shows 4 rack slots -->
-                <g class="dnode"><rect class="node-box" x="75" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
-                  <circle class="status-on" cx="90" cy="459" r="4"/>
-                  <g style="color:var(--color-accent-2)">
-                    <rect x="112" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <rect x="132" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <rect x="152" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <rect x="172" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <!-- Tải nhà máy branch -->
+                  <line class="wire" x1="770" y1="160" x2="770" y2="196"/>
+                  <rect x="763" y="196" width="14" height="14" class="breaker" />
+                  <line class="wire" x1="770" y1="210" x2="770" y2="250"/>
+                  <g class="dnode"><rect class="node-box" x="705" y="250" width="130" height="60" rx="8"/>
+                    <circle class="status-on" cx="720" cy="264" r="4"/>
+                    <g transform="translate(733,280)" style="color:oklch(78% 0.13 300)">
+                      <path d="M-6 6V-1.5l6-4.5 6 4.5V6" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <path d="M-2.3 6V2.7h4.6V6" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                    </g>
+                    <text class="node-label" x="757" y="269" style="font-size:19px">Tải nhà máy</text>
+                    <text class="node-sub" x="757" y="285" style="font-size:17px">2.85 MW</text>
+                    <text class="node-sub" x="757" y="299" style="fill:var(--color-good);font-size:17px">Đóng</text>
                   </g>
-                  <text class="node-label" x="150" y="486" text-anchor="middle" style="font-weight:600">Container 01</text>
-                  <text class="node-sub" x="150" y="500" text-anchor="middle">4 racks · -590 kW</text>
-                </g>
 
-                <!-- Container 02 — 2 racks; icon shows 2 rack slots -->
-                <g class="dnode"><rect class="node-box" x="390" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
-                  <circle class="status-on" cx="405" cy="459" r="4"/>
-                  <g style="color:var(--color-accent-2)">
-                    <rect x="432" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <rect x="468" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <!-- Battery System — PCS1/PCS2 merge into a DC combiner bus, then fan out into 3 containers, each holding its own rack count (synced with Tài sản) -->
+                  <line class="wire" x1="370" y1="310" x2="370" y2="330"/>
+                  <line class="wire" x1="560" y1="310" x2="560" y2="330"/>
+                  <line class="bus" x1="370" y1="330" x2="560" y2="330"/>
+                  <text x="465" y="320" text-anchor="middle" class="node-sub" style="font-size:18px">DC Combiner</text>
+                  <line class="wire" x1="465" y1="330" x2="465" y2="427"/>
+
+                  <!-- Battery System — a labeled enclosure grouping the 3 containers AND their racks (no standalone icon/node; the frame itself is the system boundary) -->
+                  <rect x="5" y="405" width="840" height="195" rx="10" style="fill:none;stroke:var(--color-accent);stroke-width:1.5;stroke-dasharray:6 4"/>
+                  <text x="22" y="421" class="node-label" style="font-weight:600;fill:var(--color-accent);font-size:22px">Battery System · 5.02 MWh · SOC 68%</text>
+
+                  <line class="bus" x1="150" y1="427" x2="760" y2="427"/>
+                  <line class="wire" x1="150" y1="427" x2="150" y2="447"/>
+                  <line class="wire" x1="465" y1="427" x2="465" y2="447"/>
+                  <line class="wire" x1="760" y1="427" x2="760" y2="447"/>
+
+                  <!-- Container 01 — 4 racks (Rack 04 in cảnh báo, matching Tài sản); icon shows 4 rack slots -->
+                  <g class="dnode"><rect class="node-box" x="75" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                    <circle class="status-on" cx="90" cy="459" r="4"/>
+                    <g style="color:var(--color-accent-2)">
+                      <rect x="112" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <rect x="132" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <rect x="152" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <rect x="172" y="452" width="16" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                    </g>
+                    <text class="node-label" x="150" y="486" text-anchor="middle" style="font-weight:600;font-size:19px">Container 01</text>
+                    <text class="node-sub" x="150" y="500" text-anchor="middle" style="font-size:17px">4 racks · -590 kW</text>
                   </g>
-                  <text class="node-label" x="465" y="486" text-anchor="middle" style="font-weight:600">Container 02</text>
-                  <text class="node-sub" x="465" y="500" text-anchor="middle">2 racks · -302 kW</text>
-                </g>
 
-                <!-- Container 03 — 2 racks; icon shows 2 rack slots -->
-                <g class="dnode"><rect class="node-box" x="685" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
-                  <circle class="status-on" cx="700" cy="459" r="4"/>
-                  <g style="color:var(--color-accent-2)">
-                    <rect x="727" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
-                    <rect x="763" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                  <!-- Container 02 — 2 racks; icon shows 2 rack slots -->
+                  <g class="dnode"><rect class="node-box" x="390" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                    <circle class="status-on" cx="405" cy="459" r="4"/>
+                    <g style="color:var(--color-accent-2)">
+                      <rect x="432" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <rect x="468" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                    </g>
+                    <text class="node-label" x="465" y="486" text-anchor="middle" style="font-weight:600;font-size:19px">Container 02</text>
+                    <text class="node-sub" x="465" y="500" text-anchor="middle" style="font-size:17px">2 racks · -302 kW</text>
                   </g>
-                  <text class="node-label" x="760" y="486" text-anchor="middle" style="font-weight:600">Container 03</text>
-                  <text class="node-sub" x="760" y="500" text-anchor="middle">2 racks · -297 kW</text>
-                </g>
 
-                <!-- Container 01 rack fan-out (4 racks) -->
-                <line class="wire" x1="150" y1="505" x2="150" y2="520"/>
-                <line class="bus" x1="42" y1="520" x2="258" y2="520"/>
-                <line class="wire" x1="42" y1="520" x2="42" y2="540"/>
-                <line class="wire" x1="114" y1="520" x2="114" y2="540"/>
-                <line class="wire" x1="186" y1="520" x2="186" y2="540"/>
-                <line class="wire" x1="258" y1="520" x2="258" y2="540"/>
+                  <!-- Container 03 — 2 racks; icon shows 2 rack slots -->
+                  <g class="dnode"><rect class="node-box" x="685" y="447" width="150" height="58" rx="8" style="fill:var(--color-accent-2-wash);stroke:var(--color-accent-2)"/>
+                    <circle class="status-on" cx="700" cy="459" r="4"/>
+                    <g style="color:var(--color-accent-2)">
+                      <rect x="727" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                      <rect x="763" y="452" width="30" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="1.3"/>
+                    </g>
+                    <text class="node-label" x="760" y="486" text-anchor="middle" style="font-weight:600;font-size:19px">Container 03</text>
+                    <text class="node-sub" x="760" y="500" text-anchor="middle" style="font-size:17px">2 racks · -297 kW</text>
+                  </g>
 
-                <g class="dnode"><rect class="node-box" x="11" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="42" cy="551" r="3.5"/>
-                  <text class="node-label" x="42" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
-                  <text class="node-sub" x="42" y="581" text-anchor="middle" style="font-size:8px">-152 kW</text>
-                </g>
-                <g class="dnode"><rect class="node-box" x="83" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="114" cy="551" r="3.5"/>
-                  <text class="node-label" x="114" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
-                  <text class="node-sub" x="114" y="581" text-anchor="middle" style="font-size:8px">-148 kW</text>
-                </g>
-                <g class="dnode"><rect class="node-box" x="155" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="186" cy="551" r="3.5"/>
-                  <text class="node-label" x="186" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R03</text>
-                  <text class="node-sub" x="186" y="581" text-anchor="middle" style="font-size:8px">-151 kW</text>
-                </g>
-                <g class="dnode"><rect class="node-box" x="227" y="540" width="62" height="48" rx="6" style="fill:var(--color-warning-wash);stroke:var(--color-warning)"/>
-                  <circle class="status-alarm" cx="258" cy="551" r="3.5"/>
-                  <text class="node-label" x="258" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R04</text>
-                  <text class="node-sub" x="258" y="581" text-anchor="middle" style="font-size:8px;fill:var(--color-warning)">Cảnh báo</text>
-                </g>
+                  <!-- Container 01 rack fan-out (4 racks) -->
+                  <line class="wire" x1="150" y1="505" x2="150" y2="520"/>
+                  <line class="bus" x1="42" y1="520" x2="258" y2="520"/>
+                  <line class="wire" x1="42" y1="520" x2="42" y2="540"/>
+                  <line class="wire" x1="114" y1="520" x2="114" y2="540"/>
+                  <line class="wire" x1="186" y1="520" x2="186" y2="540"/>
+                  <line class="wire" x1="258" y1="520" x2="258" y2="540"/>
 
-                <!-- Container 02 rack fan-out (2 racks) -->
-                <line class="wire" x1="465" y1="505" x2="465" y2="520"/>
-                <line class="bus" x1="429" y1="520" x2="501" y2="520"/>
-                <line class="wire" x1="429" y1="520" x2="429" y2="540"/>
-                <line class="wire" x1="501" y1="520" x2="501" y2="540"/>
+                  <g class="dnode"><rect class="node-box" x="11" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="42" cy="551" r="3.5"/>
+                    <text class="node-label" x="42" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R01</text>
+                    <text class="node-sub" x="42" y="581" text-anchor="middle" style="font-size:16px">-152 kW</text>
+                  </g>
+                  <g class="dnode"><rect class="node-box" x="83" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="114" cy="551" r="3.5"/>
+                    <text class="node-label" x="114" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R02</text>
+                    <text class="node-sub" x="114" y="581" text-anchor="middle" style="font-size:16px">-148 kW</text>
+                  </g>
+                  <g class="dnode"><rect class="node-box" x="155" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="186" cy="551" r="3.5"/>
+                    <text class="node-label" x="186" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R03</text>
+                    <text class="node-sub" x="186" y="581" text-anchor="middle" style="font-size:16px">-151 kW</text>
+                  </g>
+                  <g class="dnode"><rect class="node-box" x="227" y="540" width="62" height="48" rx="6" style="fill:var(--color-warning-wash);stroke:var(--color-warning)"/>
+                    <circle class="status-alarm" cx="258" cy="551" r="3.5"/>
+                    <text class="node-label" x="258" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R04</text>
+                    <text class="node-sub" x="258" y="581" text-anchor="middle" style="font-size:16px;fill:var(--color-warning)">Cảnh báo</text>
+                  </g>
 
-                <g class="dnode"><rect class="node-box" x="398" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="429" cy="551" r="3.5"/>
-                  <text class="node-label" x="429" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
-                  <text class="node-sub" x="429" y="581" text-anchor="middle" style="font-size:8px">-149 kW</text>
-                </g>
-                <g class="dnode"><rect class="node-box" x="470" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="501" cy="551" r="3.5"/>
-                  <text class="node-label" x="501" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
-                  <text class="node-sub" x="501" y="581" text-anchor="middle" style="font-size:8px">-153 kW</text>
-                </g>
+                  <!-- Container 02 rack fan-out (2 racks) -->
+                  <line class="wire" x1="465" y1="505" x2="465" y2="520"/>
+                  <line class="bus" x1="429" y1="520" x2="501" y2="520"/>
+                  <line class="wire" x1="429" y1="520" x2="429" y2="540"/>
+                  <line class="wire" x1="501" y1="520" x2="501" y2="540"/>
 
-                <!-- Container 03 rack fan-out (2 racks) -->
-                <line class="wire" x1="760" y1="505" x2="760" y2="520"/>
-                <line class="bus" x1="724" y1="520" x2="796" y2="520"/>
-                <line class="wire" x1="724" y1="520" x2="724" y2="540"/>
-                <line class="wire" x1="796" y1="520" x2="796" y2="540"/>
+                  <g class="dnode"><rect class="node-box" x="398" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="429" cy="551" r="3.5"/>
+                    <text class="node-label" x="429" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R01</text>
+                    <text class="node-sub" x="429" y="581" text-anchor="middle" style="font-size:16px">-149 kW</text>
+                  </g>
+                  <g class="dnode"><rect class="node-box" x="470" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="501" cy="551" r="3.5"/>
+                    <text class="node-label" x="501" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R02</text>
+                    <text class="node-sub" x="501" y="581" text-anchor="middle" style="font-size:16px">-153 kW</text>
+                  </g>
 
-                <g class="dnode"><rect class="node-box" x="693" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="724" cy="551" r="3.5"/>
-                  <text class="node-label" x="724" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R01</text>
-                  <text class="node-sub" x="724" y="581" text-anchor="middle" style="font-size:8px">-150 kW</text>
-                </g>
-                <g class="dnode"><rect class="node-box" x="765" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
-                  <circle class="status-on" cx="796" cy="551" r="3.5"/>
-                  <text class="node-label" x="796" y="567" text-anchor="middle" style="font-weight:600;font-size:9px">R02</text>
-                  <text class="node-sub" x="796" y="581" text-anchor="middle" style="font-size:8px">-147 kW</text>
-                </g>
-              </svg>
+                  <!-- Container 03 rack fan-out (2 racks) -->
+                  <line class="wire" x1="760" y1="505" x2="760" y2="520"/>
+                  <line class="bus" x1="724" y1="520" x2="796" y2="520"/>
+                  <line class="wire" x1="724" y1="520" x2="724" y2="540"/>
+                  <line class="wire" x1="796" y1="520" x2="796" y2="540"/>
 
-              <div class="u-flex u-gap-xs" style="position:absolute;left:24px;bottom:24px">
-                <button class="icon-btn" style="background:var(--color-paper-3);border:1px solid var(--color-rule)" aria-label="Phóng to"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
-                <button class="icon-btn" style="background:var(--color-paper-3);border:1px solid var(--color-rule)" aria-label="Thu nhỏ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/></svg></button>
-              </div>
+                  <g class="dnode"><rect class="node-box" x="693" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="724" cy="551" r="3.5"/>
+                    <text class="node-label" x="724" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R01</text>
+                    <text class="node-sub" x="724" y="581" text-anchor="middle" style="font-size:16px">-150 kW</text>
+                  </g>
+                  <g class="dnode"><rect class="node-box" x="765" y="540" width="62" height="48" rx="6" style="fill:var(--color-accent-wash);stroke:var(--color-accent)"/>
+                    <circle class="status-on" cx="796" cy="551" r="3.5"/>
+                    <text class="node-label" x="796" y="567" text-anchor="middle" style="font-weight:600;font-size:18px">R02</text>
+                    <text class="node-sub" x="796" y="581" text-anchor="middle" style="font-size:16px">-147 kW</text>
+                  </g>
+                </svg>
 
-              <div class="card" style="position:absolute;right:24px;bottom:24px;padding:var(--space-sm) var(--space-md)">
-                <div style="font-size:var(--text-2xs);color:var(--color-muted);margin-bottom:6px">Chú thích</div>
-                <div class="legend" style="flex-direction:column;gap:6px">
+                <div class="legend" style="justify-content:center;margin-top:var(--space-sm);gap:14px">
                   <span class="item"><span class="swatch" style="background:var(--color-good);border-radius:50%"></span>Đóng</span>
                   <span class="item"><span class="swatch" style="background:var(--color-muted);border-radius:50%"></span>Mở</span>
                   <span class="item"><span class="swatch" style="background:var(--color-warning);border-radius:50%"></span>Cảnh báo</span>
                   <span class="item"><span class="swatch" style="background:var(--color-critical);border-radius:50%"></span>Lỗi</span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <div class="page-grid" style="grid-template-columns: 1.6fr 1fr;">
-          <section class="card">
-            <div class="card-head">
-              <h2>Xu hướng công suất</h2>
-              <div class="card-head-spacer"></div>
-              <div class="legend">
-                <span class="item"><span class="swatch line" style="background:var(--chart-1)"></span>Công suất tải (MW)</span>
-                <span class="item"><span class="swatch line" style="background:var(--chart-3)"></span>PV (MW)</span>
-                <span class="item"><span class="swatch line" style="background:var(--chart-4)"></span>Tải (MW)</span>
-              </div>
-            </div>
-            <div class="card-body">
-              <div class="chart-frame" data-hover>
-                <svg viewBox="0 0 600 500" preserveAspectRatio="none" style="width:100%;height:230px">
-                  <!-- Y-axis rescaled to 0-5 MW so it can show the balanced headline figure (AC BUS = PV + Lưới nhập = BESS sạc + Tải = 4.05 MW) -->
-                  <line class="grid-line" x1="40" y1="32" x2="580" y2="32"/>
-                  <line class="grid-line" x1="40" y1="112" x2="580" y2="112"/>
-                  <line class="grid-line" x1="40" y1="192" x2="580" y2="192"/>
-                  <line class="grid-line" x1="40" y1="272" x2="580" y2="272"/>
-                  <line class="grid-line" x1="40" y1="352" x2="580" y2="352"/>
-                  <line class="grid-line" x1="40" y1="432" x2="580" y2="432"/>
-                  <line class="baseline" x1="40" y1="464" x2="580" y2="464"/>
-                  <text class="axis-label" x="4" y="36" style="font-size:11px">5.0</text>
-                  <text class="axis-label" x="4" y="116" style="font-size:11px">4.0</text>
-                  <text class="axis-label" x="4" y="196" style="font-size:11px">3.0</text>
-                  <text class="axis-label" x="4" y="276" style="font-size:11px">2.0</text>
-                  <text class="axis-label" x="4" y="356" style="font-size:11px">1.0</text>
-                  <text class="axis-label" x="4" y="436" style="font-size:11px">0</text>
-
-                  <polyline class="series-line" stroke="var(--chart-1)" points="40,288 130,272 220,224 310,144 400,108 490,192 580,272" style="stroke-width:2.5"/>
-                  <polyline class="series-line" stroke="var(--chart-3)" points="40,432 130,432 220,360 310,304 400,332 490,424 580,432" style="stroke-width:2.5"/>
-                  <polyline class="series-line" stroke="var(--chart-4)" points="40,272 130,280 220,248 310,224 400,204 490,232 580,264" style="stroke-width:2.5"/>
-
-                  <line class="chart-crosshair" x1="40" y1="16" x2="40" y2="464"/>
-                  <g>
-                    <circle class="chart-point" cx="40" cy="288" r="5.5" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"Công suất tải","value":"1.8 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.0 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="130" cy="272" r="5.5" stroke="var(--chart-1)" data-label="04:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"1.9 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="220" cy="224" r="5.5" stroke="var(--chart-1)" data-label="08:00" data-rows='[{"name":"Công suất tải","value":"2.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.3 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="310" cy="144" r="5.5" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"Công suất tải","value":"3.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.6 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.6 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="400" cy="108" r="5.5" stroke="var(--chart-1)" data-label="16:00" data-rows='[{"name":"Công suất tải","value":"4.05 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.25 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.85 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="490" cy="192" r="5.5" stroke="var(--chart-1)" data-label="20:00" data-rows='[{"name":"Công suất tải","value":"3.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.1 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.5 MW","color":"var(--chart-4)"}]'/>
-                    <circle class="chart-point" cx="580" cy="272" r="5.5" stroke="var(--chart-1)" data-label="24:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.1 MW","color":"var(--chart-4)"}]'/>
-                  </g>
-                  <text class="axis-label" x="30" y="493" style="font-size:11px">00:00</text>
-                  <text class="axis-label" x="215" y="493" style="font-size:11px">08:00</text>
-                  <text class="axis-label" x="390" y="493" style="font-size:11px">16:00</text>
-                  <text class="axis-label" x="562" y="493" style="font-size:11px">24:00</text>
-                  <rect class="chart-hover-target" x="40" y="16" width="540" height="448" fill="transparent"/>
-                </svg>
-                <div class="chart-tooltip"></div>
               </div>
             </div>
           </section>
@@ -403,6 +340,59 @@
             </div>
           </section>
         </div>
+
+        <section class="card">
+          <div class="card-head">
+            <h2>Xu hướng công suất</h2>
+            <div class="card-head-spacer"></div>
+            <div class="legend" style="font-size:18px">
+              <span class="item"><span class="swatch line" style="background:var(--chart-1)"></span>Công suất tải (MW)</span>
+              <span class="item"><span class="swatch line" style="background:var(--chart-3)"></span>PV (MW)</span>
+              <span class="item"><span class="swatch line" style="background:var(--chart-4)"></span>Tải (MW)</span>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart-frame" data-hover>
+              <svg viewBox="0 0 600 500" preserveAspectRatio="none" style="width:100%;height:230px">
+                <!-- Y-axis rescaled to 0-5 MW so it can show the balanced headline figure (AC BUS = PV + Lưới nhập = BESS sạc + Tải = 4.05 MW) -->
+                <line class="grid-line" x1="40" y1="32" x2="580" y2="32"/>
+                <line class="grid-line" x1="40" y1="112" x2="580" y2="112"/>
+                <line class="grid-line" x1="40" y1="192" x2="580" y2="192"/>
+                <line class="grid-line" x1="40" y1="272" x2="580" y2="272"/>
+                <line class="grid-line" x1="40" y1="352" x2="580" y2="352"/>
+                <line class="grid-line" x1="40" y1="432" x2="580" y2="432"/>
+                <line class="baseline" x1="40" y1="464" x2="580" y2="464"/>
+                <text class="axis-label" x="4" y="36" style="font-size:16.5px">5.0</text>
+                <text class="axis-label" x="4" y="116" style="font-size:16.5px">4.0</text>
+                <text class="axis-label" x="4" y="196" style="font-size:16.5px">3.0</text>
+                <text class="axis-label" x="4" y="276" style="font-size:16.5px">2.0</text>
+                <text class="axis-label" x="4" y="356" style="font-size:16.5px">1.0</text>
+                <text class="axis-label" x="4" y="436" style="font-size:16.5px">0</text>
+
+                <polyline class="series-line" stroke="var(--chart-1)" points="40,288 130,272 220,224 310,144 400,108 490,192 580,272" style="stroke-width:2.5"/>
+                <polyline class="series-line" stroke="var(--chart-3)" points="40,432 130,432 220,360 310,304 400,332 490,424 580,432" style="stroke-width:2.5"/>
+                <polyline class="series-line" stroke="var(--chart-4)" points="40,272 130,280 220,248 310,224 400,204 490,232 580,264" style="stroke-width:2.5"/>
+
+                <line class="chart-crosshair" x1="40" y1="16" x2="40" y2="464"/>
+                <g>
+                  <circle class="chart-point" cx="40" cy="288" r="5.5" stroke="var(--chart-1)" data-label="00:00" data-rows='[{"name":"Công suất tải","value":"1.8 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.0 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="130" cy="272" r="5.5" stroke="var(--chart-1)" data-label="04:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"1.9 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="220" cy="224" r="5.5" stroke="var(--chart-1)" data-label="08:00" data-rows='[{"name":"Công suất tải","value":"2.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.9 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.3 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="310" cy="144" r="5.5" stroke="var(--chart-1)" data-label="12:00" data-rows='[{"name":"Công suất tải","value":"3.6 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.6 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.6 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="400" cy="108" r="5.5" stroke="var(--chart-1)" data-label="16:00" data-rows='[{"name":"Công suất tải","value":"4.05 MW","color":"var(--chart-1)"},{"name":"PV","value":"1.25 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.85 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="490" cy="192" r="5.5" stroke="var(--chart-1)" data-label="20:00" data-rows='[{"name":"Công suất tải","value":"3.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.1 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.5 MW","color":"var(--chart-4)"}]'/>
+                  <circle class="chart-point" cx="580" cy="272" r="5.5" stroke="var(--chart-1)" data-label="24:00" data-rows='[{"name":"Công suất tải","value":"2.0 MW","color":"var(--chart-1)"},{"name":"PV","value":"0.0 MW","color":"var(--chart-3)"},{"name":"Tải","value":"2.1 MW","color":"var(--chart-4)"}]'/>
+                </g>
+                <text class="axis-label" x="30" y="493" style="font-size:16.5px">00:00</text>
+                <text class="axis-label" x="215" y="493" style="font-size:16.5px">08:00</text>
+                <text class="axis-label" x="390" y="493" style="font-size:16.5px">16:00</text>
+                <text class="axis-label" x="562" y="493" style="font-size:16.5px">24:00</text>
+                <rect class="chart-hover-target" x="40" y="16" width="540" height="448" fill="transparent"/>
+              </svg>
+              <div class="chart-tooltip"></div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
   </div>
